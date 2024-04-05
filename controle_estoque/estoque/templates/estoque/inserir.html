@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estoque</title>
+</head>
+<body>
+    <!-- PAGINA INSERIR -->
+    <div id="painel">
+        <h1>INSERIR</h1>
+
+        <!-- PARA SELECIONAR TIPO DA PEÇA -->
+        <label name='idtipo'>Tipo: </label>
+        <select name='idutipo'>
+            <option>-----Selecione-----</option>
+            {% for tipo in tipos %}
+                <option values=''> {{ tipo }} </option>
+            {% endfor %}
+        </select>
+
+        <!-- PARA SELECIONAR TAMANHO DA PEÇA -->
+        <label name='idtam'>Tamanho: </label>
+        <select name='idutamanho'>
+            <option>-----Selecione-----</option>
+            {% for tamanho in tamanhos %}
+                <option values=''> {{ tamanho }} </option>
+            {% endfor %}
+        </select>
+
+        <!-- PARA SELECIONAR A COR DA PEÇA -->
+        <label name='idcor'>Cor: </label>
+        <select name='iducor'>
+            <option>-----Selecione-----</option>
+            {% for cor in cores %}
+                <option values=''> {{ cor }} </option>
+            {% endfor %}
+        </select>
+
+        <!-- PARA SELECIONAR A QUANTIDADE DA PEÇA -->
+        <label name='idqtd'>Quantidade: </label>
+        <input type="number" name="quantidade" value="0" class="vIntegerField" required="" id="iduquantidade">
+
+        <!-- BOTÕES DE NAVEGAÇÃO -->
+        <h3>Inserir Item em Estoque</h3>
+        <a href="">
+            <button type="submit"><strong>INSERIR</strong></button>
+        </a>
+        
+        <a href="/estoque">
+            <button type="submit"><strong>VOLTAR</strong></button>
+        </a>
+    </div>
+
+    <!-- ESTILOS DA PAGINA PRINCIPAL -->
+    <style type="text/css">
+        html {
+            margin: 0;
+            border: 0;
+            padding: 2vmax;
+            width: 95vw;
+            height: 90vh;    
+            background-color: whitesmoke;
+            color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #painel {
+            padding: 2vmax;
+            background-color: lightblue;
+            border-radius: 5vmin;
+            display: grid;
+            align-items: center;
+            justify-content: center;
+        }
+        h1, h2, h3 {
+            display: grid;
+            align-items: center;
+            justify-content: center;
+        }
+        button {
+            width: 50vmin;
+            height: 6vmin;
+            margin: 2vmin;
+            font-weight: bold;
+            background-color: steelblue;
+            border-radius: 5vmin;
+            border-color: black;
+        }
+        select, input {
+            padding: 1vmin;
+            margin: 2vmin;
+        }
+      </style>
+      
+</body>
+</html>
