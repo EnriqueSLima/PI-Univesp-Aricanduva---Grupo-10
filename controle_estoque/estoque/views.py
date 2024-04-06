@@ -1,4 +1,3 @@
-from django.template import loader
 from django.db.models import F
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import get_object_or_404, render
@@ -27,3 +26,12 @@ def remover(request):
         'qtd' : Uniforme.uquantidade,
     }
     return render(request, "estoque/remover.html", context)
+
+def detalhe(request):
+    context = {
+        'tipos' : Tipo.objects.all(),
+        'tamanhos' : Tamanho.objects.all(),
+        'cores' : Core.objects.all(),
+        'qtd' : Uniforme.uquantidade,
+    }
+    return render(request, "estoque/detalhe.html", context)

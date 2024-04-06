@@ -3,22 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estoque</title>
+    <title>Confirmação</title>
 </head>
 <body>
     <!-- PAGINA PRINCIPAL -->
     <div id="painel">
-        <h1>ESTOQUE</h1>
-        <h2>Gerenciamento</h2>
-        <a href="{% url 'estoque:inserir' %}">
-            <button type="submit"><strong>INSERIR ITENS</strong></button>
+        <h1>Confirmação</h1>
+        <h4>Operação:</h4>
+        <form action="" method="post">
+            <div id="painel_confirma">
+                <label>Tipo:</label>
+                <label>Tamanho:</label>
+                <label>Cor:</label>
+                <label>Quant:</label>
+            </div>
+        </form>
+        <a href="{% url 'estoque:index' %}">
+            <button type="submit"><strong>CONFIRMAR</strong></button>
         </a>        
-        <a href="{% url 'estoque:remover' %}">
-            <button type="submit"><strong>REMOVER ITENS</strong></button>
+        <a href="{% url 'estoque:index' %}">
+            <button type="submit"><strong>VOLTAR</strong></button>
         </a>
-         <h3>Sair do APP</h3>
-        <button><strong>SAIR</strong></button>
-        </div>
 
     <!-- ESTILOS DA PAGINA PRINCIPAL -->
     <style type="text/css">
@@ -34,7 +39,7 @@
             align-items: center;
             justify-content: center;
         }
-        #painel {
+        #painel, #painel_confirma {
             padding: 2vmax;
             background-color: lightblue;
             border-radius: 5vmin;
