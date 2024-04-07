@@ -3,25 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estoque</title>
+    <title>Consulta</title>
 </head>
 <body>
     <!-- PAGINA PRINCIPAL -->
     <div id="painel">
-        <h1>ESTOQUE</h1>
-        <h2>Gerenciamento</h2>
-        <a href="{% url 'estoque:inserir' %}">
-            <button type="submit"><strong>INSERIR ITENS</strong></button>
-        </a>        
-        <a href="{% url 'estoque:remover' %}">
-            <button type="submit"><strong>REMOVER ITENS</strong></button>
+        <h1>Consulta</h1>
+        <h4>Estoque Atual:</h4>
+        <table>
+            <h4>Tipo:</h4>
+            <h4>Tamanho:</h4>
+            <h4>Cor:</h4>
+            <h4>Qtd:</h4>
+
+        </table>
+        
+        <a href="{% url 'estoque:index' %}">
+            <button type="submit"><strong>VOLTAR</strong></button>
         </a>
-        <a href="{% url 'estoque:consultar' %}">
-            <button type="submit"><strong>CONSULTAR ITENS</strong></button>
-        </a> 
-         <h3>Sair do APP</h3>
-        <button><strong>SAIR</strong></button>
-        </div>
 
     <!-- ESTILOS DA PAGINA PRINCIPAL -->
     <style type="text/css">
@@ -37,7 +36,7 @@
             align-items: center;
             justify-content: center;
         }
-        #painel {
+        #painel, #painel_confirma {
             padding: 2vmax;
             background-color: lightblue;
             border-radius: 5vmin;

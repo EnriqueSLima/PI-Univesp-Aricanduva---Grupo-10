@@ -1,11 +1,15 @@
 from django.urls import path
+from estoque.views import IndexView, InserirView, RemoverView,ConsultaView, DetalheView
 
 from . import views
+
 app_name = "estoque"
+
 urlpatterns = [
-    path("", views.index, name="index"),
-    path("inserir", views.inserir, name="inserir"),
-    path("remover", views.remover, name="remover"),
-    path("detalhe", views.detalhe, name="detalhe"),
+    path("", IndexView.as_view(), name="index"),
+    path("inserir", InserirView.as_view(), name="inserir"),
+    path("remover", RemoverView.as_view(), name="remover"),
+    path("consultar", ConsultaView.as_view(), name="consultar"),
+    path("detalhe", DetalheView.as_view, name="detalhe"),
 
 ]
