@@ -10,6 +10,6 @@ urlpatterns = [
     path("inserir", InserirView.as_view(), name="inserir"),
     path("remover", RemoverView.as_view(), name="remover"),
     path("consultar", ConsultaView.as_view(), name="consultar"),
-    path("detalhe", DetalheView.as_view, name="detalhe"),
+    path("detalhe", DetalheView.as_view(), name="detalhe"),
 
 ]

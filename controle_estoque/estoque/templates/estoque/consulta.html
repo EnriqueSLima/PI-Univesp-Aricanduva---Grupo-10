@@ -11,11 +11,9 @@
         <h1>Consulta</h1>
         <h4>Estoque Atual:</h4>
         <table>
-            <h4>Tipo:</h4>
-            <h4>Tamanho:</h4>
-            <h4>Cor:</h4>
-            <h4>Qtd:</h4>
-
+            {% for item in Uniforme.objects %}
+                <label>{{ item }}</label>
+            {% endfor %} 
         </table>
         
         <a href="{% url 'estoque:index' %}">
