@@ -9,7 +9,6 @@
     <!-- PAGINA INSERIR -->
     <div id="painel">
         <h1>INSERIR</h1>
-
         <!-- PARA SELECIONAR TIPO DA PEÇA -->
         <label>Tipo: </label>
         <select name='idutipo'>
@@ -18,7 +17,6 @@
                 <option values=''> {{ tipo }} </option>
             {% endfor %}
         </select>
-
         <!-- PARA SELECIONAR TAMANHO DA PEÇA -->
         <label>Tamanho: </label>
         <select name='idutamanho'>
@@ -27,7 +25,6 @@
                 <option values=''> {{ tamanho }} </option>
             {% endfor %}
         </select>
-
         <!-- PARA SELECIONAR A COR DA PEÇA -->
         <label>Cor: </label>
         <select name='iducor'>
@@ -36,21 +33,19 @@
                 <option values=''> {{ cor }} </option>
             {% endfor %}
         </select>
-
         <!-- PARA SELECIONAR A QUANTIDADE DA PEÇA -->
         <label>Quantidade: </label>
         <input type="number" name="quantidade" value="0" class="vIntegerField" required="" id="iduquantidade">
-
-        <!-- BOTÕES DE NAVEGAÇÃO -->
         <h3>Inserir Item em Estoque</h3>
-        <a href="{% url 'estoque:detalhe' %}">
+        <!-- BOTÃO DE INSERIR -->
+        <a href="{% url 'estoque:consultar' %}">
             <button type="submit"><strong>INSERIR</strong></button>
         </a>
+        <!-- BOTÃO DE VOLTAR -->
         <a href="{% url 'estoque:index' %}">
             <button type="submit"><strong>VOLTAR</strong></button>
         </a>
     </div>
-
     <!-- ESTILOS DA PAGINA PRINCIPAL -->
     <style type="text/css">
         html {
@@ -65,7 +60,7 @@
             align-items: center;
             justify-content: center;
         }
-        #painel {
+        #painel, .form {
             padding: 2vmax;
             background-color: lightblue;
             border-radius: 5vmin;

@@ -39,13 +39,14 @@
 
         <!-- PARA SELECIONAR A QUANTIDADE DA PEÇA -->
         <label>Quantidade: </label>
-        <input type="number" name="quantidade" value="0" class="vIntegerField" required="" id="iduquantidade">
+        <input type="number" name="iduquantidade" value="0" class="vIntegerField" required="" id="uquantidade">
 
-        <!-- BOTÕES DE NAVEGAÇÃO -->
+        <!-- BOTÃO DE REMOVER -->
         <h3>Remover Item em Estoque</h3>
-        <a href="{% url 'estoque:detalhe' %}">
+        <a href="{% url 'estoque:consultar' %}">
             <button type="submit"><strong>REMOVER</strong></button>
         </a>
+        <!-- BOTÃO DE VOLTAR -->
         <a href="{% url 'estoque:index' %}">
             <button type="submit"><strong>VOLTAR</strong></button>
         </a>
