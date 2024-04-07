@@ -10,12 +10,36 @@
     <div id="painel">
         <h1>Consulta</h1>
         <h4>Estoque Atual:</h4>
-        <table>
-            {% for item in Uniforme.objects %}
-                <label>{{ item }}</label>
-            {% endfor %} 
-        </table>
-        
+
+        <div class="consulta">
+            <div class="tipos">
+                <strong>Tipos:</strong><br>
+                {% for u in uniformes %}
+                    {{ u.utipo }}<br>
+                {% endfor %}
+            </div>
+
+            <div class="tamanhos">
+                <strong>Tamanhos:</strong><br>
+                {% for u in uniformes %}
+                    {{ u.utamanho }}<br>
+                {% endfor %}
+            </div>
+
+            <div class="cores">
+                <strong>Cores:</strong><br>
+                {% for u in uniformes %}
+                    {{ u.ucor }}<br>
+                {% endfor %}
+            </div>
+
+            <div class="qtde">
+                <strong>Qtde:</strong><br>
+                {% for u in uniformes %}
+                    {{ u.uquantidade }}<br>
+                {% endfor %}
+            </div>
+        </div>
         <a href="{% url 'estoque:index' %}">
             <button type="submit"><strong>VOLTAR</strong></button>
         </a>
@@ -41,6 +65,15 @@
             display: grid;
             align-items: center;
             justify-content: center;
+        }
+        .consulta {
+            display: flex;
+            background-color: white;
+        }
+        .tipos, .tamanhos, .cores, .qtde {
+            display: grid;
+            padding: 1vmax;
+            margin: 1vmin;
         }
         h1, h2, h3 {
             display: grid;

@@ -22,5 +22,5 @@ class Uniforme(models.Model):
     uquantidade = models.IntegerField(default = 0)
     upreço = models.IntegerField(default = 0)
     def __str__(self):
-        return (self.utipo, " | Tamanho ", self.utamanho," | Cor ", self.ucor," | Qtd ", self.uquantidade)
+        return '%s %s %s %s'%(self.utipo, self.utamanho, self.ucor, self.uquantidade)
     

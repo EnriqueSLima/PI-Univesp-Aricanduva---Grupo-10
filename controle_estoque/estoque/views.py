@@ -12,7 +12,7 @@ class IndexView(TemplateView):
     
 class InserirView(TemplateView):
     template_name =  "estoque/inserir.html"
-    context = {
+    extra_context = {
         'tipos' : Tipo.objects.all(),
         'tamanhos' : Tamanho.objects.all(),
         'cores' : Core.objects.all(),
@@ -21,7 +21,7 @@ class InserirView(TemplateView):
 
 class RemoverView(TemplateView):
     template_name =  "estoque/remover.html"
-    context = {
+    extra_context = {
         'tipos' : Tipo.objects.all(),
         'tamanhos' : Tamanho.objects.all(),
         'cores' : Core.objects.all(),
@@ -30,16 +30,14 @@ class RemoverView(TemplateView):
 
 class ConsultaView(TemplateView):
     template_name =  "estoque/consulta.html"
-    context = {
-        'tipos' : Tipo.objects.all(),
-        'tamanhos' : Tamanho.objects.all(),
-        'cores' : Core.objects.all(),
-        'qtd' : Uniforme.uquantidade,
+    extra_context = {
+        'uniformes' : Uniforme.objects.all(),
     }
+
 
 class DetalheView(TemplateView):
     template_name =  "estoque/detalhe.html"
-    context = {
+    extra_context = {
         'tipos' : Tipo.objects.all(),
         'tamanhos' : Tamanho.objects.all(),
         'cores' : Core.objects.all(),
