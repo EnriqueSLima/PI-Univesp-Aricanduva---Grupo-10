@@ -10,7 +10,6 @@
     <div id="painel">
         <h1>Consulta</h1>
         <h4>Estoque Atual:</h4>
-
         <div class="consulta">
             <div class="tipos">
                 <strong>Tipos:</strong><br>
@@ -43,7 +42,6 @@
         <a href="{% url 'estoque:index' %}">
             <button type="submit"><strong>VOLTAR</strong></button>
         </a>
-
     <!-- ESTILOS DA PAGINA PRINCIPAL -->
     <style type="text/css">
         html {
@@ -54,15 +52,15 @@
             height: 90vh;    
             background-color: whitesmoke;
             color: black;
-            display: flex;
+            display: grid;
             align-items: center;
             justify-content: center;
         }
-        #painel, #painel_confirma {
+        #painel {
             padding: 2vmax;
             background-color: lightblue;
             border-radius: 5vmin;
-            display: grid;
+            display: block;
             align-items: center;
             justify-content: center;
         }

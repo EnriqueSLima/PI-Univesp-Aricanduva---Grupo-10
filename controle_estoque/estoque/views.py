@@ -5,6 +5,7 @@ from django.urls import reverse
 from django.views import generic
 from django.views.generic import TemplateView
 
+from .forms import InserirForm
 from .models import Uniforme, Core, Tipo, Tamanho
 
 class IndexView(TemplateView):
@@ -17,6 +18,7 @@ class InserirView(TemplateView):
         'tamanhos' : Tamanho.objects.all(),
         'cores' : Core.objects.all(),
         'qtd' : Uniforme.uquantidade,
+        'form' : InserirForm()
     }
 
 class RemoverView(TemplateView):
