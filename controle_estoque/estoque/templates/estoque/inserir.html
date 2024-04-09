@@ -34,13 +34,13 @@
             {% endfor %}
         </select>
         <!-- PARA SELECIONAR A QUANTIDADE DA PEÇA -->
-        <!-- <label>Quantidade: </label>
-        <input type="number" name="quantidade" value="0" class="vIntegerField" required="" id="iduquantidade"> -->
-        <form action="consultar" method="post">
+        <label>Quantidade: </label>
+        <input type="number" name="quantidade" value="0" class="vIntegerField" required="" id="iduquantidade">
+        <!-- <form action="consultar" method="post">
             {% csrf_token %}
                 {{ form }}
             <input type="submit" value="Submit">
-        </form>
+        </form> -->
 
         
         <h3>Inserir Item em Estoque</h3>
@@ -87,10 +87,10 @@
             width: 50vmin;
             height: 6vmin;
             margin: 2vmin;
-            font-weight: bold;
-            background-color: steelblue;
+            color: black;
+            background-color: lightgray;
             border-radius: 5vmin;
-            border-color: black;
+            border-color: white;
         }
         select, input {
             padding: 1vmin;

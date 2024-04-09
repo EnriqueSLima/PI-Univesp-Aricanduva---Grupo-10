@@ -20,6 +20,14 @@ class InserirView(TemplateView):
         'qtd' : Uniforme.uquantidade,
         'form' : InserirForm()
     }
+    def inserir_item(request, id):
+        uniforme = get_object_or_404(Uniforme, pk=id)
+        form = InserirForm(method.POST)
+        if(method.POST):
+            qtd.save()
+            return render(request, "estoque/inserir", {'form' : form})
+        else:
+            return render(request, "estoque/inserir", {'form' : form})
 
 class RemoverView(TemplateView):
     template_name =  "estoque/remover.html"
