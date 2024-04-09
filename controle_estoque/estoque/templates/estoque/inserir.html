@@ -36,20 +36,11 @@
         <!-- PARA SELECIONAR A QUANTIDADE DA PEÇA -->
         <label>Quantidade: </label>
         <input type="number" name="quantidade" value="0" class="vIntegerField" required="" id="iduquantidade">
-        <!-- <form action="consultar" method="post">
-            {% csrf_token %}
-                {{ form }}
-            <input type="submit" value="Submit">
-        </form> -->
-
-        
+          
         <h3>Inserir Item em Estoque</h3>
         <!-- BOTÃO DE INSERIR -->
-        <form action="" method="post">
-            <button type="submit"><strong>INSERIR</strong></button>
-        </form>
         <a href="{% url 'estoque:consultar' %}">
-            
+            <button type="submit"><strong>INSERIR</strong></button>
         </a>
         <!-- BOTÃO DE VOLTAR -->
         <a href="{% url 'estoque:index' %}">
