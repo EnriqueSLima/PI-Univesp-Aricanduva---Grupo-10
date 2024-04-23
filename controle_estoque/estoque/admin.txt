@@ -1,3 +1,0 @@
-user: gerente
-email: gerente@example.com
-pass: brgerente
