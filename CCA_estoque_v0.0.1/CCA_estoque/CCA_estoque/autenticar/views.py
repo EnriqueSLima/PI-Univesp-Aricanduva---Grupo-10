@@ -19,13 +19,13 @@ def cadastrar(request):
         check_exist = User.objects.filter(username=cad_usuario).first()
         # Caso JÁ exista um usuário com este nome
         if check_exist:
-            return HttpResponse('USUÁRIO JÁ EXISTE')
+            return render(request, 'cadastrar.html')
         # Caso NÃO exista um usuário com este nome
         else:
             # Cria um novo usuário com os parametros do formulário e salva no banco de dados
             colaborador = User.objects.create_user(username=cad_usuario, email=cad_email, password=cad_senha)
             colaborador.save()
-        return HttpResponse('CADASTRADO COM SUCESSO')
+        return render(request, 'autenticar.html')
 
 # AUTENTIFICAÇÃO DE USUÁRIOS
 def autenticar(request):
@@ -41,12 +41,9 @@ def autenticar(request):
         # Caso os parametros estejam corretos
         if auth_user:
             login(request, auth_user)
-            return HttpResponse('AUTENTICADO')
+            return render(request, 'home.html')
         else:
             # Caso os parametros NÃO estejam corretos
-            return HttpResponse('INVALIDO')
+            return render(request, 'autenticar.html')
 
-# AUTENTIFICAÇÃO REQUERIDA
-@login_required(login_url = 'autenticar')
-def home(request):
-    return HttpResponse("Pagina inicial")
+

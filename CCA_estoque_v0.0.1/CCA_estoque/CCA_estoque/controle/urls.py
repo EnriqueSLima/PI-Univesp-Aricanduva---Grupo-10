@@ -4,6 +4,6 @@ import autenticar
 
 urlpatterns = [
     path('inserir', views.inserir, name = 'inserir'),
-    #path('home', autenticar.views, name='home'),
-    path('home', include('autenticar.urls')),
+    path('home', views.home, name = 'home'),
+    #path('home', include('autenticar.urls')),
 ]
