@@ -49,4 +49,4 @@ def autenticar(request):
 # AUTENTIFICAÇÃO REQUERIDA
 @login_required(login_url = 'autenticar')
 def home(request):
-    return HttpResponse("HOME PAGE")
+    return HttpResponse("Pagina inicial")
