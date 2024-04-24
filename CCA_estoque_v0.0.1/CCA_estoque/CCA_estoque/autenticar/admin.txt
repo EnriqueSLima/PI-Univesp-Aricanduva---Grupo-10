@@ -1,0 +1,3 @@
+Usuário: Gerente
+Email: gerente@example.com
+Senha: 00gerente
