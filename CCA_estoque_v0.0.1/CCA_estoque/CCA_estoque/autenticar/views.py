@@ -16,7 +16,7 @@ def cadastrar(request):
         cad_email = request.POST.get('email')
         cad_senha = request.POST.get('senha0')
         # Verifica se já existe usuário com mesmo nome
-        check_exist = User.objects.filter(username=cad_usuario).first()
+        check_exist = User.objects.filter(username=cad_usuario).all()
         # Caso JÁ exista um usuário com este nome
         if check_exist:
             return render(request, 'cadastrar.html')

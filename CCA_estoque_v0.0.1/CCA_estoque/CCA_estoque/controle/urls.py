@@ -7,5 +7,5 @@ urlpatterns = [
     path('inserir', views.inserir, name = 'inserir'),
     path('remover', views.remover, name = 'remover'),
     path('consultar', views.consultar, name = 'consultar'),
-    path('login/', include('autenticar.urls')),
+    path('login', include('autenticar.urls')),
 ]

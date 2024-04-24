@@ -6,11 +6,12 @@
     <title>Entrar</title>
 </head>
 <body>
+    <h1>Login</h1>
     <form action="{% url 'autenticar' %}" method="POST">
         {% csrf_token %}
-        <input type="text", placeholder="Usuário", name='usuario'>
+        <input type="text", placeholder="Usuário", name='usuario' required>
         <br>
-        <input type="password", placeholder="Senha", name='senha0'>
+        <input type="password", placeholder="Senha", name='senha0'required>
         <br>
         <br>
         <input type="submit", value='Entrar'>
