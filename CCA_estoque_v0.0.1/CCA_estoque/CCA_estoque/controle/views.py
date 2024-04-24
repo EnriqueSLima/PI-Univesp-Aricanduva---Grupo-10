@@ -10,3 +10,9 @@ def home(request):
 
 def inserir(request):
     return render(request, 'inserir.html')
+
+def remover(request):
+    return render(request, 'remover.html')
+
+def consultar(request):
+    return render(request, 'consultar.html')

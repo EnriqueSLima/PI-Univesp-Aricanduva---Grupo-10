@@ -18,7 +18,11 @@
         <input type="password", placeholder="Confirmar Senha", name='senha1'>
         <br>
         <br>
-        <input type="submit", value='cadastrar'>
+        <input type="submit", value='Cadastrar'>
+    </form>
+    <br>
+    <form action="{% url 'autenticar' %}">
+        <input type="submit", value='Entrar'>
     </form>
 
     <style>

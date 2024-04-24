@@ -3,7 +3,9 @@ from . import views
 import autenticar
 
 urlpatterns = [
-    path('inserir', views.inserir, name = 'inserir'),
     path('home', views.home, name = 'home'),
-    #path('home', include('autenticar.urls')),
+    path('inserir', views.inserir, name = 'inserir'),
+    path('remover', views.remover, name = 'remover'),
+    path('consultar', views.consultar, name = 'consultar'),
+    path('login/', include('autenticar.urls')),
 ]
