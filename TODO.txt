@@ -1,0 +1,21 @@
+Consultar pagina mssql-dajngo:
+
+https://pypi.org/project/mssql-django/
+
+Dependencies
+    pyodbc 3.0 or newer
+
+    ***TODO: Testar em ambiente virtual instalação mssql-django e configurar em settings.py***
+
+
+Consultar pagina django-pyobdc-azure
+
+https://pypi.org/project/django-pyodbc-azure/
+
+
+Dependencies
+
+    Django 2.1 ***Versão não tem mais suporte de atualização***
+
+    pyodbc 3.0 or newer
+

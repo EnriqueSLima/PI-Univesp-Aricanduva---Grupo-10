@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta</title>
+</head>
+    <body>
+        <!-- PAGINA PRINCIPAL -->
+        <div id="painel">
+            <h1>Consulta</h1>
+            <h4>Estoque Atual:</h4>
+            <div>
+                <table class="consulta">
+                    <thead>
+                        <tr>
+                            <th>Tipo</th>
+                            <th>Tam.</th>
+                            <th>Cor</th>
+                            <th>Qtde</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for uniforme in uniformes %} 
+                            <tr>
+                                <td>{{ uniforme.utipo }}</td>
+                                <td>{{ uniforme.utamanho }}</td>
+                                <td>{{ uniforme.ucor }}</td>
+                                <td>{{ uniforme.uquantidade }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <a href="{% url 'estoque:index' %}">
+                <button type="submit"><strong>VOLTAR</strong></button>
+            </a>
+        </div>
+
+        <!-- ESTILOS DA PAGINA PRINCIPAL -->
+        <style type="text/css">
+            html {
+                margin: 0;
+                border: 0;
+                padding: 2vmax;
+                width: 95vw;
+                height: 90vh;    
+                background-color: whitesmoke;
+                color: black;
+                display: grid;
+                align-items: center;
+                justify-content: center;
+            }
+            #painel {
+                padding: 2vmax;
+                background-color: lightblue;
+                border-radius: 5vmin;
+                display: block;
+                align-items: center;
+                justify-content: center;
+            }
+            td {
+                background-color: white;
+                display: inline-flexbox;
+                padding-left: 3vmax;
+                padding-right: 3vmax;
+            }
+            button {
+                width: 50vmin;
+                height: 6vmin;
+                margin: 2vmin;
+                color: black;
+                background-color: lightgray;
+                border-radius: 5vmin;
+                border-color: white;
+            }
+          </style>
+          
+    </body>
+</html>

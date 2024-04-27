@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+</head>
+<body>
+    <h1>Cadastro</h1>
+    <form action="{% url 'cadastrar' %}" method="POST">
+        {% csrf_token %}
+        <input type="text", placeholder="Usuário", name='usuario', required>
+        <br>
+        <input type="text", placeholder="Email", name='email'>
+        <br>
+        <br>
+        <input type="password", placeholder="Senha", name='senha0', required>
+        <br>
+        <input type="password", placeholder="Confirmar Senha", name='senha1', required>
+        <br>
+        <br>
+        <input type="submit", value='Cadastrar'>
+    </form>
+    <br>
+    <form action="{% url 'autenticar' %}">
+        <input type="submit", value='Entrar'>
+    </form>
+
+    <style>
+        html{
+            display: grid;
+            align-items: center;
+            justify-content: center;
+            margin: 20vh;
+        }
+    </style>
+</body>
+</html>

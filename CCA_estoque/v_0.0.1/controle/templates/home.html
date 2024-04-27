@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME</title>
+</head>
+<body>
+    <h1>HOME.HTML</h1>
+    <br>
+    <br>
+    <a href="{% url 'inserir' %}">INSERIR</a>
+    <br>
+    <br>
+    <a href="{% url 'remover' %}">REMOVER</a>
+    <br>
+    <br>
+    <a href="{% url 'consultar' %}">CONSULTAR</a>
+    <br>
+    <br>
+    <!-- *** TODO: Redirecionar via url, provavelmente com HttpRedirect *** --> 
+    <a href="/login/auth">SAIR</a>
+    <style>
+        html{
+            display: grid;
+            align-items: center;
+            justify-content: center;
+            margin: 20vh;
+        }
+    </style>
+</body>
+</html>

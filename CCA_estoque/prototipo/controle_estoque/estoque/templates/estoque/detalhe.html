@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmação</title>
+</head>
+    <body>
+        <!-- PAGINA PRINCIPAL -->
+        <div id="painel">
+            <h1>Confirmação</h1>
+            <h4>Operação:</h4>
+            
+
+            <a href="{% url 'estoque:index' %}">
+                <button type="submit"><strong>CONFIRMAR</strong></button>
+            </a>        
+            <a href="{% url 'estoque:index' %}">
+                <button type="submit"><strong>VOLTAR</strong></button>
+            </a>
+
+        <!-- ESTILOS DA PAGINA PRINCIPAL -->
+        <style type="text/css">
+            html {
+                margin: 0;
+                border: 0;
+                padding: 2vmax;
+                width: 95vw;
+                height: 90vh;    
+                background-color: whitesmoke;
+                color: black;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            #painel {
+                padding: 2vmax;
+                background-color: lightblue;
+                border-radius: 5vmin;
+                display: grid;
+                align-items: center;
+                justify-content: center;
+            }
+            button {
+                width: 50vmin;
+                height: 6vmin;
+                margin: 2vmin;
+                color: black;
+                background-color: lightgray;
+                border-radius: 5vmin;
+                border-color: white;
+            }
+            .tab, th {
+                background-color: white;
+                align-items: left;
+                justify-content: space-evenly;
+
+            }
+          </style>
+
+    </body>
+</html>
