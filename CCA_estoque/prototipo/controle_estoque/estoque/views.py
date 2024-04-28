@@ -1,38 +1,36 @@
-from django.db.models import F
 from django.http import HttpResponseRedirect, HttpResponse
-from django.urls import reverse
-from django.views.generic import TemplateView
+from django.shortcuts import render, redirect
 
-from .forms import InserirForm
 from .models import Uniforme, Core, Tipo, Tamanho
 
-class IndexView(TemplateView):
-    template_name = "estoque/index.html"
 
-class InserirView(TemplateView):
-    template_name =  "estoque/inserir.html"
-    model = Uniforme
-    fields = '__all__'
-    context_object_name = 'uniformes'
-    extra_context = {
-        'tipos' : Tipo.objects.all(),
-        'tamanhos' : Tamanho.objects.all(),
-        'cores' : Core.objects.all(),
-        'qtd' : Uniforme.uquantidade,
-        'form' : InserirForm()
-    }
+def index(request):
+    return render(request, 'estoque/index.html')
 
-class RemoverView(TemplateView):
-    template_name =  "estoque/remover.html"
-    extra_context = {
-        'tipos' : Tipo.objects.all(),
-        'tamanhos' : Tamanho.objects.all(),
-        'cores' : Core.objects.all(),
-        'qtd' : Uniforme.uquantidade,
-    }
+def inserir(request):
+    if request.method == 'GET':
+        context = {
+            'tipos' : Tipo.objects.all(),
+            'tamanhos' : Tamanho.objects.all(),
+            'cores' : Core.objects.all(),
+            'qtd' : Uniforme.uquantidade,
+        }
+        return render(request, 'estoque/inserir.html', context)
 
-class ConsultaView(TemplateView):
-    template_name =  "estoque/consulta.html"
-    extra_context = {
-        'uniformes' : Uniforme.objects.all(),
-    }
+def remover(request):
+    if request.method == 'GET':
+        context = {
+            'tipos' : Tipo.objects.all(),
+            'tamanhos' : Tamanho.objects.all(),
+            'cores' : Core.objects.all(),
+            'qtd' : Uniforme.uquantidade,
+        }
+        return render(request, 'estoque/remover.html', context)
+
+def consulta(request):
+    if request.method == 'GET':
+        context = {
+            'uniformes' : Uniforme.objects.all()
+        }
+        #uniformes = Uniforme.objects.all()
+        return render(request, 'estoque/consulta.html', context)

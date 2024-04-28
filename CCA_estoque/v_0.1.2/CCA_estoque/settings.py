@@ -81,7 +81,7 @@ WSGI_APPLICATION = 'CCA_estoque.wsgi.application'
 #}
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.mssql",
+        "ENGINE": "mssql",
         "NAME": "MEU_BD",
         "USER": "USER_NAME",
         "PASSWORD": "PASSWORD",
