@@ -9,42 +9,46 @@
     <!-- PAGINA INSERIR -->
     <div id="painel">
         <h1>INSERIR</h1>
-        <!-- PARA SELECIONAR TIPO DA PEÇA -->
-        <label>Tipo: </label>
-        <select name='idutipo'>
-            <option>-----Selecione-----</option>
-            {% for tipo in tipos %}
-                <option values=''> {{ tipo }} </option>
-            {% endfor %}
-        </select>
-        <!-- PARA SELECIONAR TAMANHO DA PEÇA -->
-        <label>Tamanho: </label>
-        <select name='idutamanho'>
-            <option>-----Selecione-----</option>
-            {% for tamanho in tamanhos %}
-                <option values=''> {{ tamanho }} </option>
-            {% endfor %}
-        </select>
-        <!-- PARA SELECIONAR A COR DA PEÇA -->
-        <label>Cor: </label>
-        <select name='iducor'>
-            <option>-----Selecione-----</option>
-            {% for cor in cores %}
-                <option values=''> {{ cor }} </option>
-            {% endfor %}
-        </select>
-        <!-- PARA SELECIONAR A QUANTIDADE DA PEÇA -->
-        <label>Quantidade: </label>
-        <input type="number" name="quantidade" value="0" class="vIntegerField" required="" id="iduquantidade">
-          
-        <h3>Inserir Item em Estoque</h3>
-        <!-- BOTÃO DE INSERIR -->
-        <a href="{% url 'estoque:consultar' %}">
+        <form action="{% url 'estoque:inserir' %}" method="POST">{% csrf_token %}
+            <!-- PARA SELECIONAR TIPO DA PEÇA -->
+            <label>Tipo: </label>
+            <select name='idutipo'>
+                <option>-----Selecione-----</option>
+                {% for tipo in tipos %}
+                    <option values=''> {{ tipo }} </option>
+                {% endfor %}
+            </select>
+
+            <!-- PARA SELECIONAR TAMANHO DA PEÇA -->
+            <label>Tamanho: </label>
+            <select name='idutamanho'>
+                <option>-----Selecione-----</option>
+                {% for tamanho in tamanhos %}
+                    <option values=''> {{ tamanho }} </option>
+                {% endfor %}
+            </select>
+
+            <!-- PARA SELECIONAR A COR DA PEÇA -->
+            <label>Cor: </label>
+            <select name='iducor'>
+                <option>-----Selecione-----</option>
+                {% for cor in cores %}
+                    <option values=''> {{ cor }} </option>
+                {% endfor %}
+            </select>
+
+            <!-- PARA SELECIONAR A QUANTIDADE DA PEÇA -->
+            <label>Quantidade: </label>
+            <input type="number" name="iduquantidade" class="vIntegerField" required="">
+
+            <!-- BOTÃO DE INSERIR -->
+            <h3>Inserir Item em Estoque</h3>
             <button type="submit"><strong>INSERIR</strong></button>
-        </a>
+        </form>
+
         <!-- BOTÃO DE VOLTAR -->
         <a href="{% url 'estoque:index' %}">
-            <button type="submit"><strong>VOLTAR</strong></button>
+            <button type=""><strong>VOLTAR</strong></button>
         </a>
     </div>
     <!-- ESTILOS DA PAGINA PRINCIPAL -->
