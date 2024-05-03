@@ -1,0 +1,21 @@
+{% extends "index.html" %}
+
+{% block 'body' %}
+
+    <h1>Login</h1>
+    <form action="{% url 'autenticar' %}" method="POST">
+        {% csrf_token %}
+        <input type="text", placeholder="Usuário", name='usuario' required>
+        <br>
+        <br>
+        <input type="password", placeholder="Senha", name='senha0'required>
+        <br>
+        <br>
+        <input type="submit", value='Entrar'>
+    </form>
+    <br>
+    <form action="{% url 'cadastrar' %}">
+        <input type="submit", value='Cadastro'>
+    </form>
+
+{% endblock 'body' %}
