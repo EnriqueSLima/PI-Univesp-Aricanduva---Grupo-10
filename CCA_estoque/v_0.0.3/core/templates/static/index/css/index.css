@@ -21,8 +21,8 @@ body {
     align-items: center;
     justify-content: center;
     margin: 5vw;
-    margin-bottom: 1vw;
-    margin-top: 1vw;
+    margin-bottom: .5vw;
+    margin-top: .5vw;
     color: rgb(15,107,219);
 }
 
@@ -35,15 +35,27 @@ input {
     width: 100%;
     padding: .4vw;
     background-color: white;
-    border: solid;
-    border-color: gray;
+    border: none;
+    box-shadow: 1px 1px 10px 3px rgb(15,107,219);
+}
+input:hover {
+    box-shadow: 1px 1px 10px 5px rgb(15,107,219);
 }
 
 button {
     width: 100%;
     padding: .5vw;
     background-color: rgb(15,107,219);
-    border: solid;
-    border-color: gray;
-    color: whitesmoke;
+    border: none;
+    box-shadow: 1px 1px 10px 3px rgb(255,204,41);
+    color: white;
+    /* color: rgb(255,204,41); */   
+}
+button:hover{
+    background-color:  rgb(255,204,41);
+    color: rgb(15,107,219);
+} 
+
+strong {
+    font-size: large;
 }

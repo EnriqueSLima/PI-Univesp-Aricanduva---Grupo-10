@@ -10,10 +10,8 @@ from django.contrib import messages
 # CADASTRO DE USUÁRIOS SIMPLES
 def cadastrar(request):
     if request.method == 'GET':
-        # Caso o método for GET retona a pagina de cadastro
         return render(request, 'cadastrar.html')
     else:
-        # Caso o método for POST 
         cad_usuario = request.POST.get('usuario')
         cad_email = request.POST.get('email')
         cad_senha = request.POST.get('senha0')
@@ -43,10 +41,8 @@ def cadastrar(request):
 # AUTENTIFICAÇÃO DE USUÁRIOS
 def autenticar(request):
     if request.method == 'GET':
-        # Caso o método for GET retona a pagina de login
         return render(request, 'autenticar.html')
     else:
-        # Caso o método for POST 
         usuario = request.POST.get('usuario')
         senha = request.POST.get('senha0')
         # Autentificação do usuário 
