@@ -1,15 +1,28 @@
 {% extends "index.html" %}
 {% load static %}
 
-{% block 'body' %}
+{% block 'title' %}Cadastro{% endblock 'title' %}
 
-    <h1>Cadastro</h1>
+{% block 'body' %}
+    {% if messages %}
+        {% for message in messages %}
+            <section class="alert {{message.tags}}">
+                {{message}}
+            </section>
+        {% endfor %}
+    {% endif %}
+    <h3>Cadastro</h3>
     <form action="{% url 'cadastrar' %}" method="POST">
         {% csrf_token %}
+        <label for="usuario">Usuário</label>
+        <br>
         <input type="text", placeholder="Usuário", name='usuario', required>
+        <br>
+        <label for="email">Email</label>
         <br>
         <input type="text", placeholder="Email", name='email'>
         <br>
+        <label for="Senha">Senha</label>
         <br>
         <input type="password", placeholder="Senha", name='senha0', required>
         <br>
@@ -22,5 +35,4 @@
     <form action="{% url 'autenticar' %}">
         <input type="submit", value='Entrar'>
     </form>
-
 {% endblock 'body' %}

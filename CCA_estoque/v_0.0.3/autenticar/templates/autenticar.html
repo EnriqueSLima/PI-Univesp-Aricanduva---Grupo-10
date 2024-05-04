@@ -1,17 +1,24 @@
 {% extends "index.html" %}
 {% load static %}
 
-{% block 'head' %}
-    <link rel="stylesheet" href="{% static 'autenticar/css/autenticar.css' %}">
-{% endblock 'head' %}
+{% block 'title' %}Autenticar{% endblock 'title' %}
 
 {% block 'body' %}
-
-    <h1>Login</h1>
+    {% if messages %}
+        {% for message in messages %}
+            <section class="alert {{message.tags}}">
+                {{message}}
+            </section>
+        {% endfor %}
+    {% endif %}
+    <h3>Entrar</h3>
     <form action="{% url 'autenticar' %}" method="POST">
         {% csrf_token %}
+        <label for="usuario">Usuário</label>
+        <br>
         <input type="text", placeholder="Usuário", name='usuario' required>
         <br>
+        <label for="Senha">Senha</label>
         <br>
         <input type="password", placeholder="Senha", name='senha0'required>
         <br>
@@ -22,5 +29,4 @@
     <form action="{% url 'cadastrar' %}">
         <input type="submit", value='Cadastro'>
     </form>
-
 {% endblock 'body' %}
