@@ -29,7 +29,7 @@
 
 ** Para rodar o servidor **
 
-No diretório v_0.0.3 onde está o arquivo manage.py, execute o comando:
+No diretório v_0.1.2 onde está o arquivo manage.py, execute o comando:
 
 - SO Linux:
     python3 manage.py runserver
