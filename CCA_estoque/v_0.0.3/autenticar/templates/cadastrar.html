@@ -12,8 +12,7 @@
         {% endfor %}
     {% endif %}
     <h3>Cadastro</h3>
-    <form action="{% url 'cadastrar' %}" method="POST">
-        {% csrf_token %}
+    <form action="{% url 'cadastrar' %}" method="POST">{% csrf_token %}
         <label for="usuario">Usuário</label>
         <br>
         <input type="text", placeholder="Usuário", name='usuario', required>

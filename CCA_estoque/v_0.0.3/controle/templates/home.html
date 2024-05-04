@@ -1,0 +1,20 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block 'title' %}Home{% endblock 'title' %}
+
+{% block 'body' %}
+    <div class="container">
+        <a href="{% url 'inserir' %}"><input type="submit" value="Inserir" ></a>
+        <br>
+        <br>
+        <a href="{% url 'remover' %}"><input type="submit" value="Remover" ></a>
+        <br>
+        <br>
+        <a href="{% url 'consultar' %}"><input type="submit" value="Consultar" ></a>
+        <br>
+        <br>
+        <br>
+        <a href="{% url 'autenticar' %}"><input type="submit" value="Sair" ></a>
+    </div>
+{% endblock 'body' %}

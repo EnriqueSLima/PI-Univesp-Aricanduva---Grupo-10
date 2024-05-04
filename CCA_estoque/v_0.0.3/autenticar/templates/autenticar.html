@@ -1,7 +1,7 @@
 {% extends "index.html" %}
 {% load static %}
 
-{% block 'title' %}Autenticar{% endblock 'title' %}
+{% block 'title' %} Autenticar {% endblock 'title' %}
 
 {% block 'body' %}
     {% if messages %}
@@ -12,8 +12,7 @@
         {% endfor %}
     {% endif %}
     <h3>Entrar</h3>
-    <form action="{% url 'autenticar' %}" method="POST">
-        {% csrf_token %}
+    <form action="{% url 'autenticar' %}" method="POST">{% csrf_token %}
         <label for="usuario">Usuário</label>
         <br>
         <input type="text", placeholder="Usuário", name='usuario' required>

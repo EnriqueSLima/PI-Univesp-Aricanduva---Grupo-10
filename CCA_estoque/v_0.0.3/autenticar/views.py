@@ -26,7 +26,7 @@ def cadastrar(request):
             return render(request, 'cadastrar.html')
         # Caso a senha tenha menos de 6 caracteres
         if len(cad_senha) < 6:
-            messages.add_message(request, constants.ERROR, 'A senha deve possuir pelo menos 6 caracteres.')
+            messages.add_message(request, constants.ERROR, 'A senha deve ter pelo menos 6 caracteres.')
             return render(request, 'cadastrar.html')
         # Caso as senhas sejam diferentes
         if cad_senha != cad_senha1:
@@ -38,7 +38,7 @@ def cadastrar(request):
             colaborador = User.objects.create_user(username=cad_usuario, email=cad_email, password=cad_senha)
             colaborador.save()
             messages.add_message(request, constants.SUCCESS, 'Usuário cadastrado com sucesso.')
-        return render(request, 'autenticar.html')
+            return render(request, 'autenticar.html')
 
 # AUTENTIFICAÇÃO DE USUÁRIOS
 def autenticar(request):
@@ -50,7 +50,7 @@ def autenticar(request):
         usuario = request.POST.get('usuario')
         senha = request.POST.get('senha0')
         # Autentificação do usuário 
-        auth_user = authenticate(username=usuario, password=senha)
+        auth_user = authenticate(request, username=usuario, password=senha)
         # Caso os parametros estejam corretos
         if auth_user:
             login(request, auth_user)

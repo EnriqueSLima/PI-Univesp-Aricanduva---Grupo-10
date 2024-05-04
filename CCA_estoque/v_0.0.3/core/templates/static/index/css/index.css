@@ -1,32 +1,31 @@
-html {
+* {
+    padding: .2vw;
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.index {
+    padding: 2vw;
     display: grid;
     align-items: center;
     justify-content: center;
 }
-
 .header {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 2vw;
-    background-color: yellow;
-    border-top-left-radius: 5vw;
-    border-top-right-radius: 5vw;
+    margin: 5vw;
+    margin-bottom: 1vw;
+    margin-top: 1vw;
 }
 
-.formulario {
-    padding: 5vw;
-    background-color: lightskyblue;
-    border-bottom-left-radius: 5vw;
-    border-bottom-right-radius: 5vw;}
-
 .logo {
-    width: 12vw;
-    height:  12vh;
+    width: 10vw;
     margin-right: 2vw;
 }
 
 input {
-    width: 40vw;
-    padding: 0.5vw;
+    width: 100%;
+    padding: .4vw;
 }
