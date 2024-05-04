@@ -5,12 +5,17 @@
     justify-content: center;
 }
 
+body {
+    background-image: url(ccabackground.jpg);
+}
+
 .index {
     padding: 2vw;
     display: grid;
     align-items: center;
     justify-content: center;
 }
+
 .header {
     display: flex;
     align-items: center;
@@ -18,14 +23,27 @@
     margin: 5vw;
     margin-bottom: 1vw;
     margin-top: 1vw;
+    color: rgb(15,107,219);
 }
 
 .logo {
-    width: 10vw;
+    width: 35%;
     margin-right: 2vw;
 }
 
 input {
     width: 100%;
     padding: .4vw;
+    background-color: white;
+    border: solid;
+    border-color: gray;
+}
+
+button {
+    width: 100%;
+    padding: .5vw;
+    background-color: rgb(15,107,219);
+    border: solid;
+    border-color: gray;
+    color: whitesmoke;
 }

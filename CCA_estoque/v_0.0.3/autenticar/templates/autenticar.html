@@ -13,19 +13,19 @@
     {% endif %}
     <h3>Entrar</h3>
     <form action="{% url 'autenticar' %}" method="POST">{% csrf_token %}
-        <label for="usuario">Usuário</label>
+        <label for="usuario"><strong>Usuário</strong></label>
         <br>
-        <input type="text", placeholder="Usuário", name='usuario' required>
+        <input type="text", placeholder=" Usuário", name='usuario' required>
         <br>
-        <label for="Senha">Senha</label>
+        <label for="Senha"><strong>Senha</strong></label>
         <br>
-        <input type="password", placeholder="Senha", name='senha0'required>
+        <input type="password", placeholder=" Senha", name='senha0'required>
         <br>
         <br>
-        <input type="submit", value='Entrar'>
+        <button type="submit"><strong>Entrar</strong></button>
     </form>
     <br>
     <form action="{% url 'cadastrar' %}">
-        <input type="submit", value='Cadastro'>
+        <button type="submit"><strong>Cadastrar</strong></button>
     </form>
 {% endblock 'body' %}

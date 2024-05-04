@@ -5,16 +5,17 @@
 
 {% block 'body' %}
     <div class="container">
-        <a href="{% url 'inserir' %}"><input type="submit" value="Inserir" ></a>
+        <br>
+        <a href="{% url 'inserir' %}"><button type="submit"><strong>Inserir</strong></button></a>
         <br>
         <br>
-        <a href="{% url 'remover' %}"><input type="submit" value="Remover" ></a>
+        <a href="{% url 'remover' %}"><button type="submit"><strong>Remover</strong></button></a>
         <br>
         <br>
-        <a href="{% url 'consultar' %}"><input type="submit" value="Consultar" ></a>
+        <a href="{% url 'consultar' %}"><button type="submit"><strong>Consultar</strong></button></a>
         <br>
         <br>
         <br>
-        <a href="{% url 'autenticar' %}"><input type="submit" value="Sair" ></a>
+        <a href="{% url 'autenticar' %}"><button type="submit"><strong>Sair</strong></button></a>
     </div>
 {% endblock 'body' %}

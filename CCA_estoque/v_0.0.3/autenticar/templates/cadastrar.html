@@ -13,25 +13,26 @@
     {% endif %}
     <h3>Cadastro</h3>
     <form action="{% url 'cadastrar' %}" method="POST">{% csrf_token %}
-        <label for="usuario">Usuário</label>
+        <label for="usuario"><strong>Usuário</strong></label>
         <br>
         <input type="text", placeholder="Usuário", name='usuario', required>
         <br>
-        <label for="email">Email</label>
+        <label for="email"><strong>Email</strong></label>
         <br>
         <input type="text", placeholder="Email", name='email'>
         <br>
-        <label for="Senha">Senha</label>
+        <label for="Senha"><strong>Senha</strong></label>
         <br>
         <input type="password", placeholder="Senha", name='senha0', required>
         <br>
         <input type="password", placeholder="Confirmar Senha", name='senha1', required>
         <br>
         <br>
-        <input type="submit", value='Cadastrar'>
+        <button type="submit"><strong>Cadastrar</strong>
+        </button>
     </form>
     <br>
     <form action="{% url 'autenticar' %}">
-        <input type="submit", value='Entrar'>
+        <button type="submit"><strong>Entrar</strong></button>
     </form>
 {% endblock 'body' %}
