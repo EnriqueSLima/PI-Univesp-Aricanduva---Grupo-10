@@ -1,0 +1,21 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block 'title' %}Home{% endblock 'title' %}
+
+{% block 'body' %}
+    <div class="container">
+        <br>
+        <a href="{% url 'inserir' %}"><button type="submit"><strong>Inserir</strong></button></a>
+        <br>
+        <br>
+        <a href="{% url 'remover' %}"><button type="submit"><strong>Remover</strong></button></a>
+        <br>
+        <br>
+        <a href="{% url 'consultar' %}"><button type="submit"><strong>Consultar</strong></button></a>
+        <br>
+        <br>
+        <br>
+        <a href="{% url 'autenticar' %}"><button type="submit"><strong>Sair</strong></button></a>
+    </div>
+{% endblock 'body' %}

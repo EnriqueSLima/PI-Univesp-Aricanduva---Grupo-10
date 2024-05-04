@@ -1,0 +1,73 @@
+/* ESTILO PARA AS PÁGINAS QUE EXTENDER DE INDEX.HTML */
+
+/* Definindo algumas variáveis para cores padrão */
+:root {
+    --cor-azul : rgb(15,107,219);
+    --cor-azul-claro: rgb(229, 246,254);
+    --cor-amarela : rgb(255,204,41);
+}
+
+* {
+    padding: .2vw;
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+}
+
+/* TODO: Verificar path para a pasta img (Está com delay) */
+body {
+    background-image: url(ccabackground.jpg);
+}
+
+.index {
+    padding: 2vw;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5vw;
+    margin-bottom: .5vw;
+    margin-top: .5vw;
+    color: rgb(15,107,219);
+}
+
+.logo {
+    width: 35%;
+    margin-right: 2vw;
+}
+
+input {
+    width: 100%;
+    padding: .4vw;
+    background-color: white;
+    border: none;
+    box-shadow: 1px 1px 10px 3px var(--cor-azul);
+}
+/* Hover: quando está sob a seta do mouse faz alteração */
+input:hover {
+    box-shadow: 1px 1px 10px 5px var(--cor-azul);
+}
+
+button {
+    width: 100%;
+    padding: .5vw;
+    background-color: rgb(15,107,219);
+    box-shadow: 1px 1px 10px 3px var(--cor-amarela);
+    color: var(--cor-azul-claro);
+    border-radius: 30%;
+}
+/* Hover: quando está sob a seta do mouse faz alteração */
+button:hover{
+    background-color: var(--cor-amarela);
+    color: var(--cor-azul);
+} 
+
+strong {
+    font-size: large;
+    padding: 0px;
+}
