@@ -42,11 +42,11 @@ body {
 }
 
 input {
-    width: 100%;
-    padding: .4vw;
+    width: 98%;
+    padding: .5vw;
     background-color: white;
     border: none;
-    box-shadow: 1px 1px 10px 3px var(--cor-azul);
+    box-shadow: 1px 1px 5px 2px var(--cor-azul);
 }
 /* Hover: quando está sob a seta do mouse faz alteração */
 input:hover {
@@ -54,16 +54,17 @@ input:hover {
 }
 
 button {
-    width: 100%;
+    width: 98%;
     padding: .5vw;
     background-color: rgb(15,107,219);
-    box-shadow: 1px 1px 10px 3px var(--cor-amarela);
+    box-shadow: 1px 1px 5px 2px var(--cor-amarela);
     color: var(--cor-azul-claro);
     border-radius: 30%;
 }
 /* Hover: quando está sob a seta do mouse faz alteração */
-button:hover{
+button:hover, button::after{
     background-color: var(--cor-amarela);
+    box-shadow: 1px 1px 10px 3px var(--cor-amarela);
     color: var(--cor-azul);
 } 
 
