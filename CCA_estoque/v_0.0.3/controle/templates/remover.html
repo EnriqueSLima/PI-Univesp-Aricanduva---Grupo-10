@@ -4,7 +4,14 @@
 {% block 'title' %}Home{% endblock 'title' %}
 
 {% block 'body' %}
-    <form action="" method="POST">{% csrf_token %}
+    {% if messages %}
+    {% for message in messages %}
+        <section class="alert {{message.tags}}">
+            {{message}}
+        </section>
+    {% endfor %}
+    {% endif %}
+    <form action="{% url 'remover' %}" method="POST">{% csrf_token %}
         <label for=""><strong>Tipos</strong></label>
         <select name="tipo" class="form-select" id="">
             <option value="">---Selecione---</option>
@@ -34,9 +41,9 @@
             {% endfor %}
         </select>
         <label for=""><strong>Quantidade</strong></label>
-        <input type="number" placeholder="0" name="qtd" class="form-control shadow-main-color">
+        <input type="number" name="qtd" placeholder="0"  class="form-control shadow-main-color">
         <br>
-        <a href="{% url 'inserir' %}"><button type="submit"><strong>Remover</strong></button></a>
+       <button type="submit"><strong>Inserir</strong></button>
         <br>
         <br>
     </form>

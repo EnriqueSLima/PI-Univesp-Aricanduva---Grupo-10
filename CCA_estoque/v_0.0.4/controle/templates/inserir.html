@@ -1,0 +1,51 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block 'title' %}Inserir{% endblock 'title' %}
+
+{% block 'body' %}
+    {% if messages %}
+    {% for message in messages %}
+        <section class="alert {{message.tags}}">
+            {{message}}
+        </section>
+    {% endfor %}
+    {% endif %}
+    <form action="{% url 'inserir' %}" method="POST">{% csrf_token %}
+        <label for=""><strong>Tipos</strong></label>
+        <select name="tipo" class="form-select" id="">
+            <option value="">---Selecione---</option>
+            {% for t in tipos %}
+                <option value="{{t.id}}">{{t}}</option>
+            {% endfor %}
+        </select>
+        <label for=""><strong>Estilos</strong></label>
+        <select name="estilo" class="form-select" id="">
+            <option value="">---Selecione---</option>
+            {% for e in estilos %}
+                <option value="{{e.id}}">{{e}}</option>
+            {% endfor %}
+        </select>
+        <label for=""><strong>Cores</strong></label>
+        <select name="cor" class="form-select" id="">
+            <option value="">---Selecione---</option>
+            {% for c in cores %}
+                <option value="{{c.id}}">{{c}}</option>
+            {% endfor %}
+        </select>
+        <label for=""><strong>Tamanhos</strong></label>
+        <select name="tamanho" class="form-select" id="">
+            <option value="">---Selecione---</option>
+            {% for s in tamanhos %} <!-- s for size = tamanho -->
+                <option value="{{s.id}}">{{s}}</option>
+            {% endfor %}
+        </select>
+        <label for=""><strong>Quantidade</strong></label>
+        <input type="number" name="quantidade" placeholder="0"  class="form-control shadow-main-color">
+        <br>
+        <button type="submit"><strong>Inserir</strong></button>
+        <br>
+        <br>
+    </form>
+    <a href="{% url 'home' %}"><button type="submit"><strong>Voltar</strong></button></a>
+{% endblock 'body' %}
