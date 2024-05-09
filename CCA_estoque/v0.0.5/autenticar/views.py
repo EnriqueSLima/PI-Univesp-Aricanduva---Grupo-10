@@ -21,15 +21,15 @@ def cadastrar(request):
         # Caso JÁ exista um usuário com este nome
         if check_exist:
             messages.add_message(request, constants.ERROR, 'Usuário já existe.')
-            return render(request, 'cadastrar.html')
+            return redirect('cadastrar')
         # Caso a senha tenha menos de 6 caracteres
         if len(cad_senha) < 6:
             messages.add_message(request, constants.ERROR, 'A senha deve ter pelo menos 6 caracteres.')
-            return render(request, 'cadastrar.html')
+            return redirect('cadastrar')
         # Caso as senhas sejam diferentes
         if cad_senha != cad_senha1:
             messages.add_message(request, constants.ERROR, 'As senhas não são iguais.')
-            return render(request, 'cadastrar.html')
+            return redirect('cadastrar')
         # Caso NÃO haja conflitos com os IF's anteriores
         else:
             # Cria um novo usuário com os parametros do formulário e salva no banco de dados
@@ -54,4 +54,4 @@ def autenticar(request):
         else:
             # Caso os parametros NÃO estejam corretos
             messages.add_message(request, constants.ERROR, 'Usuário ou Senha incorretos.')
-            return render(request, 'autenticar.html')
+            return redirect('autenticar')

@@ -24,63 +24,33 @@ def inserir(request):
     if request.method == "GET":
         return render(request, 'inserir.html', context)
     else:
-        tipo = request.POST.get('tipo')  # Updated key
-        estilo = request.POST.get('estilo')  # Updated key
-        cor = request.POST.get('cor')  # Updated key
-        tamanho = request.POST.get('tamanho')  # Updated key
+        tipo = request.POST.get('tipo')
+        estilo = request.POST.get('estilo')
+        cor = request.POST.get('cor')
+        tamanho = request.POST.get('tamanho')
         qtd = request.POST.get('qtd')
-      
-        uniforme = Uniforme.objects.get(tipo_id=tipo, estilo_id=estilo, cor_id=cor, tamanho_id=tamanho)  # Updated to use tipo_id, estilo_id, cor_id, tamanho_id
+
+        uniforme = Uniforme.objects.get(tipo_id=tipo, estilo_id=estilo, cor_id=cor, tamanho_id=tamanho)
         uniforme.qtd += int(qtd)
         uniforme.save()
         messages.add_message(request, constants.SUCCESS, 'Uniforme inserido com sucesso.')
-
         return redirect('inserir')
-
-
-#@login_required(login_url = 'autenticar')
-#def inserir(request):
-#    if request.method == "GET":
-#        return render(request, 'inserir.html', context)
-#    else:
-#        tipo_id = request.POST.get('tipos')
-#        estilo_id = request.POST.get('estilos')
-#        cor_id = request.POST.get('cores')
-#        tamanho_id = request.POST.get('tamanhos')
-#        quantidade = request.POST.get('quantidade')
-#        
-#        try:
-#            # Create a new Uniforme object with the provided data
-#            uniforme = Uniforme.objects.create(
-#                tipo_id=tipo_id,
-#                estilo_id=estilo_id,
-#                cor_id=cor_id,
-#                tamanho_id=tamanho_id,
-#                qtd=quantidade
-#            )
-#            messages.add_message(request, constants.SUCCESS, 'Uniforme inserido com sucesso.')
-#        except Exception as e:
-#            # Handle any exceptions that occur during object creation
-#            messages.add_message(request, constants.ERROR, f'Erro ao inserir uniforme: {e}')
-#
-#        return redirect('inserir')  # Redirect back to the inserir page or any other URL
-
 
 @login_required(login_url = 'autenticar')
 def remover(request):
     if request.method == "GET":
         return render(request, 'remover.html', context)
     else:
-        tipo = request.POST.get('tipo')  # Updated key
-        estilo = request.POST.get('estilo')  # Updated key
-        cor = request.POST.get('cor')  # Updated key
-        tamanho = request.POST.get('tamanho')  # Updated key
+        tipo = request.POST.get('tipo')
+        estilo = request.POST.get('estilo')
+        cor = request.POST.get('cor')
+        tamanho = request.POST.get('tamanho')
         qtd = request.POST.get('qtd')
       
-        uniforme = Uniforme.objects.get(tipo_id=tipo, estilo_id=estilo, cor_id=cor, tamanho_id=tamanho)  # Updated to use tipo_id, estilo_id, cor_id, tamanho_id
+        uniforme = Uniforme.objects.get(tipo_id=tipo, estilo_id=estilo, cor_id=cor, tamanho_id=tamanho)
         uniforme.qtd -= int(qtd)
         uniforme.save()
-        messages.add_message(request, constants.SUCCESS, 'Uniforme inserido com sucesso.')
+        messages.add_message(request, constants.SUCCESS, 'Uniforme removido com sucesso.')
 
         return redirect('remover')
 
