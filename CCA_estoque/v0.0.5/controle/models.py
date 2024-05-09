@@ -7,13 +7,6 @@ class Tipo(models.Model):
     def __str__(self):
         return self.tipo
 
-class Estilo(models.Model):
-    tipo = models.ForeignKey(Tipo, on_delete=models.DO_NOTHING)
-    estilo = models.CharField(max_length=20)
-
-    def __str__(self):
-        return f"{self.estilo}"
-
 class Core(models.Model):
     cor = models.CharField(max_length=20)
 
@@ -28,11 +21,10 @@ class Tamanho(models.Model):
 
 class Uniforme(models.Model):
     tipo = models.ForeignKey(Tipo, on_delete=models.DO_NOTHING)
-    estilo = models.ForeignKey(Estilo, on_delete=models.DO_NOTHING)
     cor = models.ForeignKey(Core, on_delete=models.DO_NOTHING)
     tamanho = models.ForeignKey(Tamanho, on_delete=models.DO_NOTHING)
     qtd = models.PositiveIntegerField(default=0)
 
     def __str__(self):
-        return f"{self.tipo} - {self.estilo} - {self.cor} - tamanho: {self.tamanho} - quantidade: {self.qtd}"
+        return f"{self.tipo} - {self.cor} - tamanho: {self.tamanho} - quantidade: {self.qtd}"
 

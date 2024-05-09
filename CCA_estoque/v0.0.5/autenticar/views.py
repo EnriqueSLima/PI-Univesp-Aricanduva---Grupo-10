@@ -36,7 +36,7 @@ def cadastrar(request):
             colaborador = User.objects.create_user(username=cad_usuario, email=cad_email, password=cad_senha)
             colaborador.save()
             messages.add_message(request, constants.SUCCESS, 'Usuário cadastrado com sucesso.')
-            return redirect('home')
+            return redirect('cadastrar')
 
 # AUTENTIFICAÇÃO DE USUÁRIOS
 def autenticar(request):
@@ -50,7 +50,7 @@ def autenticar(request):
         # Caso os parametros estejam corretos
         if auth_user:
             login(request, auth_user)
-            return render(request, 'home.html')
+            return redirect('home')
         else:
             # Caso os parametros NÃO estejam corretos
             messages.add_message(request, constants.ERROR, 'Usuário ou Senha incorretos.')

@@ -14,34 +14,27 @@
     <form action="{% url 'inserir' %}" method="POST">{% csrf_token %}
         <label for=""><strong>Tipos</strong></label>
         <select name="tipo" class="form-select" id="">
-            <option value="">---Selecione---</option>
+            <option value="">---Selecione um tipo---</option>
             {% for t in tipos %}
                 <option value="{{t.id}}">{{t}}</option>
             {% endfor %}
         </select>
-        <label for=""><strong>Estilos</strong></label>
-        <select name="estilo" class="form-select" id="">
-            <option value="">---Selecione---</option>
-            {% for e in estilos %}
-                <option value="{{e.id}}">{{e}}</option>
-            {% endfor %}
-        </select>
         <label for=""><strong>Cores</strong></label>
         <select name="cor" class="form-select" id="">
-            <option value="">---Selecione---</option>
+            <option value="">---Selecione uma cor---</option>
             {% for c in cores %}
                 <option value="{{c.id}}">{{c}}</option>
             {% endfor %}
         </select>
         <label for=""><strong>Tamanhos</strong></label>
         <select name="tamanho" class="form-select" id="">
-            <option value="">---Selecione---</option>
+            <option value="">---Selecione um tamanho---</option>
             {% for s in tamanhos %} <!-- s for size = tamanho -->
                 <option value="{{s.id}}">{{s}}</option>
             {% endfor %}
         </select>
         <label for=""><strong>Quantidade</strong></label>
-        <input name="qtd" type="number" placeholder="0" class="form-control shadow-main-color">
+        <input name="qtd" type="number" placeholder=" Digite a quantidade" class="form-control shadow-main-color">
         <br>
         <button type="submit"><strong>Inserir</strong></button>
         <br>

@@ -4,11 +4,10 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.messages import constants
 from django.contrib import messages
 from django.db import models
-from .models import Tipo, Estilo, Core, Tamanho, Uniforme
+from .models import Tipo, Core, Tamanho, Uniforme
 
 context = {
         'tipos' : Tipo.objects.all(),
-        'estilos' : Estilo.objects.all(),
         'cores' : Core.objects.all(),
         'tamanhos' : Tamanho.objects.all(),
         'qtd' : Uniforme.qtd,
@@ -25,12 +24,11 @@ def inserir(request):
         return render(request, 'inserir.html', context)
     else:
         tipo = request.POST.get('tipo')
-        estilo = request.POST.get('estilo')
         cor = request.POST.get('cor')
         tamanho = request.POST.get('tamanho')
         qtd = request.POST.get('qtd')
 
-        uniforme = Uniforme.objects.get(tipo_id=tipo, estilo_id=estilo, cor_id=cor, tamanho_id=tamanho)
+        uniforme = Uniforme.objects.get(tipo_id=tipo, cor_id=cor, tamanho_id=tamanho)
         uniforme.qtd += int(qtd)
         uniforme.save()
         messages.add_message(request, constants.SUCCESS, 'Uniforme inserido com sucesso.')
@@ -42,12 +40,11 @@ def remover(request):
         return render(request, 'remover.html', context)
     else:
         tipo = request.POST.get('tipo')
-        estilo = request.POST.get('estilo')
         cor = request.POST.get('cor')
         tamanho = request.POST.get('tamanho')
         qtd = request.POST.get('qtd')
       
-        uniforme = Uniforme.objects.get(tipo_id=tipo, estilo_id=estilo, cor_id=cor, tamanho_id=tamanho)
+        uniforme = Uniforme.objects.get(tipo_id=tipo, cor_id=cor, tamanho_id=tamanho)
         uniforme.qtd -= int(qtd)
         uniforme.save()
         messages.add_message(request, constants.SUCCESS, 'Uniforme removido com sucesso.')
