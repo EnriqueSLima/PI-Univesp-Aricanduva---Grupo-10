@@ -5,6 +5,8 @@
 
 - SO Windows:
     python -m venv venv
+    ou
+    py -m venv venv
 
 
 **Para ativar um ambiente virtual**
@@ -28,12 +30,14 @@
 
 ** Para rodar o servidor **
 
-No diretório v_0.0.3 onde está o arquivo manage.py, execute o comando:
+No diretório onde se encontra o arquivo manage.py, execute o comando:
 
 - SO Linux:
     python3 manage.py runserver
 
 - SO Windows:
     python manage.py runserver
+    ou
+    py manage.py runserver
 
-Deposi acesse o servidor local na porta 8000.
+Depois acesse o servidor local na porta 8000.

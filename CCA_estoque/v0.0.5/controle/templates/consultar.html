@@ -25,12 +25,15 @@
         <tbody>
             {% for uniforme in uniformes %}
                 <tr>
-                    {{uniforme}}
-                    
+                    <td>{{uniforme.tipo}}</td>
+                    <td>{{uniforme.cor}}</td>
+                    <td>{{uniforme.tamanho}}</td>
+                    <td>{{uniforme.qtd}}</td>
                 </tr>
             {% endfor %}
         </tbody>
     </table>
-<a href="{% url 'home' %}"><button type="submit"><strong>Voltar</strong></button></a>
+</div>
+<a href="{% url 'home' %}"><button type="button"><strong>Voltar</strong></button></a>
 
 {% endblock 'body' %}

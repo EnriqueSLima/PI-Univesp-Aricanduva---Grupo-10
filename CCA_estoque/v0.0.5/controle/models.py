@@ -23,7 +23,7 @@ class Uniforme(models.Model):
     tipo = models.ForeignKey(Tipo, on_delete=models.DO_NOTHING)
     cor = models.ForeignKey(Core, on_delete=models.DO_NOTHING)
     tamanho = models.ForeignKey(Tamanho, on_delete=models.DO_NOTHING)
-    qtd = models.PositiveIntegerField(default=0)
+    qtd = models.PositiveIntegerField()
 
     def __str__(self):
         return f"{self.tipo} - {self.cor} - tamanho: {self.tamanho} - quantidade: {self.qtd}"

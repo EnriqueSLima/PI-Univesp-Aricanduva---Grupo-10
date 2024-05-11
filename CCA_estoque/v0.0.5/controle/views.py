@@ -11,6 +11,7 @@ context = {
         'cores' : Core.objects.all(),
         'tamanhos' : Tamanho.objects.all(),
         'qtd' : Uniforme.qtd,
+        'uniformes' : Uniforme.objects.all(),
     }
 
 # AUTENTIFICAÇÃO REQUERIDA
@@ -28,11 +29,20 @@ def inserir(request):
         tamanho = request.POST.get('tamanho')
         qtd = request.POST.get('qtd')
 
-        uniforme = Uniforme.objects.get(tipo_id=tipo, cor_id=cor, tamanho_id=tamanho)
-        uniforme.qtd += int(qtd)
-        uniforme.save()
-        messages.add_message(request, constants.SUCCESS, 'Uniforme inserido com sucesso.')
+        try:
+            uniforme = Uniforme.objects.get(tipo_id=tipo, cor_id=cor, tamanho_id=tamanho)
+            if uniforme:
+                uniforme.qtd += int(qtd)
+                uniforme.save()
+                messages.success(request, 'Uniforme inserido com sucesso.')
+        except Uniforme.DoesNotExist:
+            uniforme = Uniforme.objects.create(tipo_id=tipo, cor_id=cor, tamanho_id=tamanho, qtd=qtd)
+            messages.success(request, 'Novo uniforme criado com sucesso.')
+        except Exception as e:
+            messages.error(request, f'Erro ao inserir: {e}')
+        
         return redirect('inserir')
+
 
 @login_required(login_url = 'autenticar')
 def remover(request):
@@ -43,16 +53,29 @@ def remover(request):
         cor = request.POST.get('cor')
         tamanho = request.POST.get('tamanho')
         qtd = request.POST.get('qtd')
-      
-        uniforme = Uniforme.objects.get(tipo_id=tipo, cor_id=cor, tamanho_id=tamanho)
-        uniforme.qtd -= int(qtd)
-        uniforme.save()
-        messages.add_message(request, constants.SUCCESS, 'Uniforme removido com sucesso.')
 
+        try:
+            uniforme = Uniforme.objects.get(tipo_id=tipo, cor_id=cor, tamanho_id=tamanho)
+            if uniforme:
+                uniforme.qtd -= int(qtd)
+                if uniforme.qtd < 0:
+                    messages.success(request, 'Quantidade maior que o estoque.')
+                    return redirect('remover')
+                uniforme.save()
+                messages.success(request, 'Uniforme removido com sucesso.')
+        except Uniforme.DoesNotExist:
+            messages.error(request, 'Uniforme não cadastrado.')
+        except Exception as e:
+            messages.error(request, f'Erro ao remover: {e}')
+        
         return redirect('remover')
 
 @login_required(login_url = 'autenticar')
 def consultar(request):
+    uniformes = Uniforme.objects.all()
+    context = {
+        'uniformes': uniformes,
+    }
     if request.method == "GET":
         return render(request, 'consultar.html', context)
     else:
