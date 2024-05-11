@@ -11,7 +11,6 @@ context = {
         'cores' : Core.objects.all(),
         'tamanhos' : Tamanho.objects.all(),
         'qtd' : Uniforme.qtd,
-        'uniformes' : Uniforme.objects.all(),
     }
 
 # AUTENTIFICAÇÃO REQUERIDA
@@ -75,8 +74,16 @@ def consultar(request):
     uniformes = Uniforme.objects.all()
     context = {
         'uniformes': uniformes,
+        'tipos' : Tipo.objects.all(),
+        'cores' : Core.objects.all(),
+        'tamanhos' : Tamanho.objects.all(),
+        'qtd' : Uniforme.qtd,
     }
     if request.method == "GET":
         return render(request, 'consultar.html', context)
     else:
-        return render(request, 'consultar.html', context)
+        tipo_filter = request.GET.get('tipo_filter')
+        tamanho_filter = request.GET.get('tamanho_filter')
+        cor_filter = request.GET.get('cor_filter')
+
+        return redirect('consultar')

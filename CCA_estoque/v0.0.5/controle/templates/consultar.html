@@ -12,13 +12,41 @@
 {% endfor %}
 {% endif %}
 <h2>Consultar</h2>
+<div class="filters">
+    <form action="{% url 'consultar' %}" method="GET">
+        <label for="tipo_filter"><strong>Tipo:</strong></label>
+        <select name="tipo_filter" id="">
+            <option value="">Todos</option>
+            {% for tipo in tipos %}
+                <option value="{{tipo_id}}">{{tipo}}</option>
+            {% endfor %}
+        </select>
+        <label for="tamanho_filter"><strong>Tamanho:</strong></label>
+        <select name="tamanho_filter" id="">
+            <option value="">Todos</option>
+            {% for tamanho in tamanhos %}
+                <option value="{{tamanho_id}}">{{tamanho}}</option>
+            {% endfor %}
+        </select>
+        <label for="cor_filter"><strong>Cor:</strong></label>
+        <select name="cor_filter" id="">
+            <option value="">Todos</option>
+            {% for cor in cores %}
+                <option value="{{cor_id}}">{{cor}}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <button class="filter_btn"><strong>Filtrar</strong></button>
+        <br><br>
+    </form>
+</div>
 <div>
     <table class="table">
         <thead>
             <tr>
                 <th scope="col">Tipo</th>
-                <th scope="col">Cor</th>
                 <th scope="col">Tamanho</th>
+                <th scope="col">Cor</th>
                 <th scope="col">Quantidade</th>
             </tr>
         </thead>
@@ -26,8 +54,8 @@
             {% for uniforme in uniformes %}
                 <tr>
                     <td>{{uniforme.tipo}}</td>
-                    <td>{{uniforme.cor}}</td>
                     <td>{{uniforme.tamanho}}</td>
+                    <td>{{uniforme.cor}}</td>
                     <td>{{uniforme.qtd}}</td>
                 </tr>
             {% endfor %}
