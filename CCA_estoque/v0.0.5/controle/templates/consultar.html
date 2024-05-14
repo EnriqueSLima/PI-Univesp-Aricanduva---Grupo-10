@@ -3,6 +3,10 @@
 
 {% block 'title' %}Consultar{% endblock 'title' %}
 
+{% block 'head'%}
+    <link rel="stylesheet" href="{% static 'consulta/css/consulta.css' %}">
+{% endblock 'head'%}
+
 {% block 'body' %}
 {% if messages %}
 {% for message in messages %}
@@ -13,31 +17,32 @@
 {% endif %}
 <h2>Consultar</h2>
 <div class="filters">
-    <form action="{% url 'consultar' %}" method="GET">
+    <form action="" method="GET">
         <label for="tipo_filter"><strong>Tipo:</strong></label>
-        <select name="tipo_filter" id="">
-            <option value="">Todos</option>
+        <select name="tipo_filter" id="tipo_filter">
+            <option value="0">Todos</option>
             {% for tipo in tipos %}
-                <option value="{{tipo_id}}">{{tipo}}</option>
+                <option value="{{ tipo_id }}">{{ tipo.tipo }}</option>
             {% endfor %}
         </select>
+
         <label for="tamanho_filter"><strong>Tamanho:</strong></label>
-        <select name="tamanho_filter" id="">
-            <option value="">Todos</option>
+        <select name="tamanho_filter" id="tamanho_filter">
+            <option value="0">Todos</option>
             {% for tamanho in tamanhos %}
-                <option value="{{tamanho_id}}">{{tamanho}}</option>
+                <option value="{{ tamanho_id }}">{{ tamanho.tamanho }}</option>
             {% endfor %}
         </select>
+
         <label for="cor_filter"><strong>Cor:</strong></label>
-        <select name="cor_filter" id="">
-            <option value="">Todos</option>
+        <select name="cor_filter" id="cor_filter">
+            <option value="0">Todos</option>
             {% for cor in cores %}
-                <option value="{{cor_id}}">{{cor}}</option>
+                <option value="{{ cor_id }}">{{ cor.cor }}</option>
             {% endfor %}
         </select>
-        <br>
-        <button class="filter_btn"><strong>Filtrar</strong></button>
-        <br><br>
+
+        <button type="submit">Filtrar</button>
     </form>
 </div>
 <div>

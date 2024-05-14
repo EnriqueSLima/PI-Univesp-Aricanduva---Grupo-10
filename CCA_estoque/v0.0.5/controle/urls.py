@@ -7,5 +7,6 @@ urlpatterns = [
     path('inserir', views.inserir, name = 'inserir'),
     path('remover', views.remover, name = 'remover'),
     path('consultar', views.consultar, name = 'consultar'),
+    path('test', views.test, name = 'test'),
     path('login', include('autenticar.urls')),
 ]

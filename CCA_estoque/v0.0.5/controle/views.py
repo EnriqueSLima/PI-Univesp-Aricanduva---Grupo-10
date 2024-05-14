@@ -7,11 +7,11 @@ from django.db import models
 from .models import Tipo, Core, Tamanho, Uniforme
 
 context = {
-        'tipos' : Tipo.objects.all(),
-        'cores' : Core.objects.all(),
-        'tamanhos' : Tamanho.objects.all(),
-        'qtd' : Uniforme.qtd,
-    }
+    'tipos' : Tipo.objects.all(),
+    'cores' : Core.objects.all(),
+    'tamanhos' : Tamanho.objects.all(),
+    'qtd' : Uniforme.qtd,
+}
 
 # AUTENTIFICAÇÃO REQUERIDA
 @login_required(login_url = 'autenticar')
@@ -71,19 +71,34 @@ def remover(request):
 
 @login_required(login_url = 'autenticar')
 def consultar(request):
-    uniformes = Uniforme.objects.all()
     context = {
-        'uniformes': uniformes,
+        'uniformes': Uniforme.objects.all(),
         'tipos' : Tipo.objects.all(),
         'cores' : Core.objects.all(),
         'tamanhos' : Tamanho.objects.all(),
         'qtd' : Uniforme.qtd,
     }
+
+    tipo_filter = request.GET.get('tipo_filter')
+    tamanho_filter = request.GET.get('tamanho_filter')
+    cor_filter = request.GET.get('cor_filter')
+
     if request.method == "GET":
         return render(request, 'consultar.html', context)
     else:
-        tipo_filter = request.GET.get('tipo_filter')
-        tamanho_filter = request.GET.get('tamanho_filter')
-        cor_filter = request.GET.get('cor_filter')
-
         return redirect('consultar')
+
+def test(request):
+    context = {
+        'uniformes': Uniforme.objects.all(),
+        'tipos' : Tipo.objects.all(),
+        'generos' : Genero.objects.all(),
+        'cores' : Core.objects.all(),
+        'tamanhos' : Tamanho.objects.all(),
+        'qtd' : Uniforme.qtd,
+    }
+
+    tipo_filter = request.GET.get('tipo_filter')
+    tamanho_filter = request.GET.get('tamanho_filter')
+    cor_filter = request.GET.get('cor_filter')
+    return render(request, 'test.html', context)
