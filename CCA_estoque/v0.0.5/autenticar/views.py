@@ -20,7 +20,7 @@ def cadastrar(request):
         check_exist = User.objects.filter(username=cad_usuario).all()
         # Caso JÁ exista um usuário com este nome
         if check_exist:
-            messages.add_message(request, constants.ERROR, 'Usuário já existe.')
+            messages.add_message(request, constants.WARNING, 'Usuário já existe.')
             return redirect('cadastrar')
         # Caso a senha tenha menos de 6 caracteres
         if len(cad_senha) < 6:

@@ -58,7 +58,7 @@ def remover(request):
             if uniforme:
                 uniforme.qtd -= int(qtd)
                 if uniforme.qtd < 0:
-                    messages.success(request, 'Quantidade maior que o estoque.')
+                    messages.warning(request, 'Quantidade maior que o estoque.')
                     return redirect('remover')
                 uniforme.save()
                 messages.success(request, 'Uniforme removido com sucesso.')

@@ -8,7 +8,7 @@
 }
 
 * {
-    padding: 0;
+    padding: .2vw;
     margin: 0;
     align-items: center;
     justify-content: center;
@@ -22,16 +22,16 @@ body {
     display: grid;
     align-items: center;
     justify-content: center;
+    color: var(--cor-azul);
 }
 
 .header {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 5vw;
-    margin-bottom: .5vw;
-    margin-top: 5vw;
-    color: var(--cor-azul);
+    margin: 6vw;
+    margin-bottom: .2vw;
+    margin-top: .2vw;
 }
 
 .logo {
@@ -41,7 +41,7 @@ body {
 
 input {
     width: 98%;
-    padding: .5vw;
+    margin: .5vw;
     background-color: white;
     border: none;
     box-shadow: 1px 1px 5px 2px var(--cor-azul);
@@ -49,6 +49,11 @@ input {
 /* hover: quando está sob a seta do mouse faz alteração */
 input:hover {
     box-shadow: 1px 1px 10px 5px var(--cor-azul);
+}
+
+label {
+    background-color: var(--cor-azul-claro);
+    margin-top: .5vw;
 }
 
 button {
