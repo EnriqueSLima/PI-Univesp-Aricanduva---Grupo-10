@@ -78,27 +78,6 @@ def remover(request):
 
 @login_required(login_url = 'autenticar')
 def consultar(request):
-    context = {
-        'uniformes': Uniforme.objects.all(),
-        'generos' : Genero.objects.all(),
-        'tipos' : Tipo.objects.all(),
-        'cores' : Core.objects.all(),
-        'tamanhos' : Tamanho.objects.all(),
-        'qtd' : Uniforme.qtd,
-        'local' : Uniforme.local,
-    }
-
-    tipo_filter = request.GET.get('tipo_filter')
-    tamanho_filter = request.GET.get('tamanho_filter')
-    cor_filter = request.GET.get('cor_filter')
-
-    if request.method == "GET":
-        return render(request, 'consultar.html', context)
-    else:
-        return redirect('consultar')
-
-
-def test(request):
     uniformes = Uniforme.objects.all()
     generos = Genero.objects.all()
     tipos = Tipo.objects.all()
@@ -123,5 +102,11 @@ def test(request):
         'cores': cores,
         'tamanhos': tamanhos,
     }
-    return render(request, 'test.html', context)
+    return render(request, 'consultar.html', context)
 
+
+def estoque(request):
+    return render(request, 'estoque.html', context)
+
+def historico(request):
+        return render(request, 'historico.html', context)

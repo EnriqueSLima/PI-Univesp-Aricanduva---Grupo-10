@@ -14,3 +14,7 @@
     box-shadow: 1px 1px 10px 3px var(--cor-amarela);
     color: var(--cor-azul);
 }
+
+select {
+    padding-right: 2vw;
+}

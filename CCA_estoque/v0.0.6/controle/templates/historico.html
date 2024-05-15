@@ -1,0 +1,22 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block 'title' %}Consultar{% endblock 'title' %}
+
+{% block 'head'%}
+    <link rel="stylesheet" href="{% static 'consulta/css/consulta.css' %}">
+{% endblock 'head'%}
+
+{% block 'body' %}
+{% if messages %}
+{% for message in messages %}
+    <section class="alert {{message.tags}}">
+        {{message}}
+    </section>
+{% endfor %}
+{% endif %}
+<h3>Hitórico</h3>
+
+<a href="{% url 'estoque' %}"><button class='btn_default'><strong>Voltar</strong></button></a>
+
+{% endblock 'body' %}

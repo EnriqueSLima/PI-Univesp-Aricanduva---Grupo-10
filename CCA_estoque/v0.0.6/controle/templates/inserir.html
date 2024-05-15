@@ -11,6 +11,7 @@
         </section>
     {% endfor %}
     {% endif %}
+    <h3>Inserir</h3>
     <form action="{% url 'inserir' %}" method="POST">{% csrf_token %}
         <label for=""><strong>Tipos</strong></label>
         <select name="tipo" class="form-select" id="" required>

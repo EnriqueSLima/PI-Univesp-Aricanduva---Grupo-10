@@ -30,7 +30,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 6vw;
+    margin: 8vw;
     margin-bottom: .2vw;
     margin-top: .2vw;
 }
@@ -42,6 +42,7 @@ body {
 
 input {
     width: 98%;
+    padding: .2vw;
     margin: .5vw;
     background-color: white;
     border: none;
@@ -58,7 +59,7 @@ label {
 }
 
 .btn_default {
-    width: 98%;
+    width: 100%;
     padding: .5vw;
     background-color: var(--cor-azul);
     box-shadow: 1px 1px 5px 2px var(--cor-amarela);
