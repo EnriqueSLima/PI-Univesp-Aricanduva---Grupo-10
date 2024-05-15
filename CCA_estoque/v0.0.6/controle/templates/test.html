@@ -12,7 +12,7 @@
         <form action="" method="GET">
             <label for="tipo_filter"><strong>Tipo:</strong></label>
             <select name="tipo_filter" id="tipo_filter">
-                <option value="">Todos</option>
+                <option value="0">Todos</option>
                 <!-- Loop through tipos to create options -->
                 {% for tipo in tipos %}
                     <option value="{{ tipo.id }}">{{ tipo.tipo }}</option>
@@ -21,7 +21,7 @@
 
             <label for="tamanho_filter"><strong>Tamanho:</strong></label>
             <select name="tamanho_filter" id="tamanho_filter">
-                <option value="">Todos</option>
+                <option value="0">Todos</option>
                 <!-- Loop through tamanhos to create options -->
                 {% for tamanho in tamanhos %}
                     <option value="{{ tamanho.id }}">{{ tamanho.tamanho }}</option>
@@ -30,7 +30,7 @@
 
             <label for="cor_filter"><strong>Cor:</strong></label>
             <select name="cor_filter" id="cor_filter">
-                <option value="">Todos</option>
+                <option value="0">Todos</option>
                 <!-- Loop through cores to create options -->
                 {% for cor in cores %}
                     <option value="{{ cor.id }}">{{ cor.cor }}</option>

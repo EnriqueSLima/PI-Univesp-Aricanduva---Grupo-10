@@ -97,17 +97,31 @@ def consultar(request):
     else:
         return redirect('consultar')
 
+
 def test(request):
-    context = {
-        'uniformes': Uniforme.objects.all(),
-        'tipos' : Tipo.objects.all(),
-        'generos' : Genero.objects.all(),
-        'cores' : Core.objects.all(),
-        'tamanhos' : Tamanho.objects.all(),
-        'qtd' : Uniforme.qtd,
-    }
+    uniformes = Uniforme.objects.all()
+    generos = Genero.objects.all()
+    tipos = Tipo.objects.all()
+    cores = Core.objects.all()
+    tamanhos = Tamanho.objects.all()
 
     tipo_filter = request.GET.get('tipo_filter')
     tamanho_filter = request.GET.get('tamanho_filter')
     cor_filter = request.GET.get('cor_filter')
+
+    if tipo_filter and tipo_filter != '0':
+        uniformes = uniformes.filter(tipo_id=tipo_filter)
+    if tamanho_filter and tamanho_filter != '0':
+        uniformes = uniformes.filter(tamanho_id=tamanho_filter)
+    if cor_filter and cor_filter != '0':
+        uniformes = uniformes.filter(cor_id=cor_filter)
+
+    context = {
+        'uniformes': uniformes,
+        'generos': generos,
+        'tipos': tipos,
+        'cores': cores,
+        'tamanhos': tamanhos,
+    }
     return render(request, 'test.html', context)
+
