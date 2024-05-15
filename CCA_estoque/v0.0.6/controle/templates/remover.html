@@ -13,21 +13,21 @@
     {% endif %}
     <h3>Remover</h3>
     <form action="{% url 'remover' %}" method="POST">{% csrf_token %}
-        <label for=""><strong>Tipos</strong></label>
+        <label for=""><strong>Tipos: </strong></label>
         <select name="tipo" class="form-select" id="" required>
             <option value="">---Selecione um tipo---</option>
             {% for t in tipos %}
                 <option value="{{t.id}}">{{t}}</option>
             {% endfor %}
         </select>
-        <label for=""><strong>Cores</strong></label>
+        <label for=""><strong>Cores: </strong></label>
         <select name="cor" class="form-select" id="" required>
             <option value="">---Selecione uma cor---</option>
             {% for c in cores %}
                 <option value="{{c.id}}">{{c}}</option>
             {% endfor %}
         </select>
-        <label for=""><strong>Tamanhos</strong></label>
+        <label for=""><strong>Tamanhos: </strong></label>
         <select name="tamanho" class="form-select" id="" required>
             <option value="">---Selecione um tamanho---</option>
             {% for s in tamanhos %} <!-- s for size = tamanho -->
@@ -35,14 +35,14 @@
             {% endfor %}
         </select>
         </select>
-        <label for=""><strong>Gênero</strong></label>
+        <label for=""><strong>Gêneros: </strong></label>
         <select name="genero" class="form-select" id="" required>
             <option value="">---Selecione um gênero---</option>
             {% for g in generos %}
                 <option value="{{g.id}}">{{g}}</option>
             {% endfor %}
         </select>
-        <label for=""><strong>Quantidade</strong></label>
+        <label for=""><strong>Quantidade: </strong></label>
         <input name="qtd" type="number" placeholder=" Digite a quantidade" class="form-control shadow-main-color" required>
         <br>
         <button class='btn_default' type="submit"><strong>Remover</strong></button>

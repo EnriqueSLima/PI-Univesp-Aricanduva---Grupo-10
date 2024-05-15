@@ -41,8 +41,8 @@ body {
 }
 
 input {
-    width: 98%;
-    padding: .2vw;
+    width: 100%;
+    padding: .3vw;
     margin: .5vw;
     background-color: white;
     border: none;

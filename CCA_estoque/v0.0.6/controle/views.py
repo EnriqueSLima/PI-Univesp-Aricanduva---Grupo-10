@@ -104,9 +104,10 @@ def consultar(request):
     }
     return render(request, 'consultar.html', context)
 
-
+@login_required(login_url='autenticar')
 def estoque(request):
     return render(request, 'estoque.html', context)
 
+@login_required(login_url='autenticar')
 def historico(request):
-        return render(request, 'historico.html', context)
+    return render(request, 'historico.html', context)
