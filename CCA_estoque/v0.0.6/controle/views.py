@@ -29,16 +29,18 @@ def inserir(request):
         tipo = request.POST.get('tipo')
         cor = request.POST.get('cor')
         tamanho = request.POST.get('tamanho')
+        genero = request.POST.get('genero')
         qtd = request.POST.get('qtd')
+        local = request.POST.get('local')
 
         try:
-            uniforme = Uniforme.objects.get(tipo_id=tipo, cor_id=cor, tamanho_id=tamanho)
+            uniforme = Uniforme.objects.get(tipo_id=tipo, cor_id=cor, tamanho_id=tamanho, genero_id=genero)
             if uniforme:
                 uniforme.qtd += int(qtd)
                 uniforme.save()
                 messages.success(request, 'Uniforme inserido com sucesso.')
         except Uniforme.DoesNotExist:
-            uniforme = Uniforme.objects.create(tipo_id=tipo, cor_id=cor, tamanho_id=tamanho, qtd=qtd)
+            uniforme = Uniforme.objects.create(tipo_id=tipo, cor_id=cor, tamanho_id=tamanho,genero_id=genero , qtd=qtd, local=local)
             messages.success(request, 'Novo uniforme criado com sucesso.')
         except Exception as e:
             messages.error(request, f'Erro ao inserir: {e}')
@@ -54,10 +56,12 @@ def remover(request):
         tipo = request.POST.get('tipo')
         cor = request.POST.get('cor')
         tamanho = request.POST.get('tamanho')
+        genero = request.POST.get('genero')
         qtd = request.POST.get('qtd')
+        local = request.POST.get('local')
 
         try:
-            uniforme = Uniforme.objects.get(tipo_id=tipo, cor_id=cor, tamanho_id=tamanho)
+            uniforme = Uniforme.objects.get(tipo_id=tipo, cor_id=cor, tamanho_id=tamanho, genero_id=genero)
             if uniforme:
                 uniforme.qtd -= int(qtd)
                 if uniforme.qtd < 0:

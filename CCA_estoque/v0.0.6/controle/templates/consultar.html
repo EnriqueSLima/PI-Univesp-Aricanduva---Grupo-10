@@ -18,6 +18,7 @@
 <h2>Consultar</h2>
 <div class="filters">
     <form action="" method="GET">
+
         <label for="tipo_filter"><strong>Tipo:</strong></label>
         <select name="tipo_filter" id="tipo_filter">
             <option value="0">Todos</option>
@@ -25,7 +26,6 @@
                 <option value="{{ tipo_id }}">{{ tipo.tipo }}</option>
             {% endfor %}
         </select>
-
         <label for="tamanho_filter"><strong>Tamanho:</strong></label>
         <select name="tamanho_filter" id="tamanho_filter">
             <option value="0">Todos</option>
@@ -33,7 +33,6 @@
                 <option value="{{ tamanho_id }}">{{ tamanho.tamanho }}</option>
             {% endfor %}
         </select>
-
         <label for="cor_filter"><strong>Cor:</strong></label>
         <select name="cor_filter" id="cor_filter">
             <option value="0">Todos</option>
@@ -41,18 +40,18 @@
                 <option value="{{ cor_id }}">{{ cor.cor }}</option>
             {% endfor %}
         </select>
-
-        <button type="submit">Filtrar</button>
+        <button class='filterbtn' type="submit">Filtrar</button>
     </form>
 </div>
+<hr>
 <div>
     <table class="table">
         <thead>
             <tr>
                 <th scope="col">Tipo</th>
-                <th scope="col">Genero</th>
                 <th scope="col">Tamanho</th>
                 <th scope="col">Cor</th>
+                <th scope="col">Genero</th>
                 <th scope="col">Quantidade</th>
                 <th scope="col">Local</th>
             </tr>
@@ -61,9 +60,9 @@
             {% for uniforme in uniformes %}
                 <tr>
                     <td>{{uniforme.tipo}}</td>
-                    <td>{{uniforme.genero}}</td>
                     <td>{{uniforme.tamanho}}</td>
                     <td>{{uniforme.cor}}</td>
+                    <td>{{uniforme.genero}}</td>
                     <td>{{uniforme.qtd}}</td>
                     <td>{{uniforme.local}}</td>
                 </tr>
@@ -71,6 +70,6 @@
         </tbody>
     </table>
 </div>
-<a href="{% url 'home' %}"><button type="button"><strong>Voltar</strong></button></a>
+<a href="{% url 'home' %}"><button class='btn_default'><strong>Voltar</strong></button></a>
 
 {% endblock 'body' %}

@@ -1,0 +1,16 @@
+.filters {
+    display: flex;
+    justify-content: space-around;
+    padding: .2vw;
+}
+
+.filterbtn {
+    padding: .2vw;
+    background-color: var(--cor-azul);
+    color: var(--cor-azul-claro);
+}
+.filterbtn:hover {
+    background-color: var(--cor-amarela);
+    box-shadow: 1px 1px 10px 3px var(--cor-amarela);
+    color: var(--cor-azul);
+}

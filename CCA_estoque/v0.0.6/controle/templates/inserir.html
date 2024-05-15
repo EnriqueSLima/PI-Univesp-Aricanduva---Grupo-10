@@ -19,13 +19,6 @@
                 <option value="{{t.id}}">{{t}}</option>
             {% endfor %}
         </select>
-        <label for=""><strong>Gênero</strong></label>
-        <select name="genero" class="form-select" id="" required>
-            <option value="">---Selecione um gênero---</option>
-            {% for g in generos %}
-                <option value="{{g.id}}">{{g}}</option>
-            {% endfor %}
-        </select>
         <label for=""><strong>Cores</strong></label>
         <select name="cor" class="form-select" id="" required>
             <option value="">---Selecione uma cor---</option>
@@ -40,15 +33,21 @@
                 <option value="{{s.id}}">{{s}}</option>
             {% endfor %}
         </select>
+        <label for=""><strong>Gênero</strong></label>
+        <select name="genero" class="form-select" id="" required>
+            <option value="">---Selecione um gênero---</option>
+            {% for g in generos %}
+                <option value="{{g.id}}">{{g}}</option>
+            {% endfor %}
+        </select>
         <label for=""><strong>Quantidade</strong></label>
         <input name="qtd" type="number" placeholder=" Digite a quantidade" class="form-control shadow-main-color" required>
-        <br>
         <label for=""><strong>Local</strong></label>
-        <input name="local" type="text" placeholder=" Digite Local" class="form-control shadow-main-color" required>
+        <input name="local" type="text" placeholder=" Digite o local" class="form-control shadow-main-color" required>
         <br>
-        <button type="submit"><strong>Inserir</strong></button>
+        <button class='btn_default' type="submit"><strong>Inserir</strong></button>
         <br>
         <br>
     </form>
-    <a href="{% url 'home' %}"><button type="submit"><strong>Voltar</strong></button></a>
+    <a href="{% url 'home' %}"><button class='btn_default'><strong>Voltar</strong></button></a>
 {% endblock 'body' %}

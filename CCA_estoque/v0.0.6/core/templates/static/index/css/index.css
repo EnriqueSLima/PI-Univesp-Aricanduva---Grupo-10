@@ -8,14 +8,15 @@
 }
 
 * {
-    padding: .2vw;
-    margin: 0;
+    padding: 0vw;
+    margin: 0vw;
     align-items: center;
     justify-content: center;
 }
 
 body {
     background-image: url(ccabackground.jpg);
+    transform: scale(0.8);
 }
 
 .index {
@@ -47,7 +48,7 @@ input {
     box-shadow: 1px 1px 5px 2px var(--cor-azul);
 }
 /* hover: quando está sob a seta do mouse faz alteração */
-input:hover {
+input:hover, select:hover {
     box-shadow: 1px 1px 10px 5px var(--cor-azul);
 }
 
@@ -56,16 +57,15 @@ label {
     margin-top: .5vw;
 }
 
-button {
+.btn_default {
     width: 98%;
     padding: .5vw;
     background-color: var(--cor-azul);
     box-shadow: 1px 1px 5px 2px var(--cor-amarela);
     color: var(--cor-azul-claro);
-    border-radius: 30%;
 }
 /* hover: quando está sob a seta do mouse faz alteração */
-button:hover, button::after{
+.btn_default:hover, .btn_default::after{
     background-color: var(--cor-amarela);
     box-shadow: 1px 1px 10px 3px var(--cor-amarela);
     color: var(--cor-azul);
