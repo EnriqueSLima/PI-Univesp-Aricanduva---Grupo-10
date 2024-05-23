@@ -2,6 +2,8 @@
 
 - python 3.11
 - pip venv
+- Django 3.2
+- pyodbc 5.1.0
 
 *** Para criar um ambiente virtual:
 
@@ -29,7 +31,8 @@
 *** Se preferir não ativar o ambiente virtual precisará instalar:
 
 - python 3.11
-- Django 5.0
+- Django 3.2
+- pyodbc 5.1.0
 
 *** Para rodar o servidor:
 
