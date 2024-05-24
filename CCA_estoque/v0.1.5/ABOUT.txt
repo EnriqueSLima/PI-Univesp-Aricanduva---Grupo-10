@@ -1,9 +1,12 @@
+*** ESTA VERSÃO NÃO FOI COMPLETAMENTE IMPLEMENTADA ***
+
 *** Requisitos necessarios:
 
 - python 3.11
 - pip venv
 - Django 3.2
 - pyodbc 5.1.0
+- django-mssql-backend 2.8
 
 *** Para criar um ambiente virtual:
 
@@ -33,6 +36,7 @@
 - python 3.11
 - Django 3.2
 - pyodbc 5.1.0
+- django-mssql-backend 2.8
 
 *** Para rodar o servidor:
 
@@ -47,3 +51,6 @@ No diretório onde se encontra o arquivo manage.py, execute o comando:
     py manage.py runserver
 
 Depois acesse o servidor local na porta 8000.
+
+*** OBS: É PRECISO ESTAR COM BD CONFIGURADO PARA CONEXÃO
+    CASO NÃO CONECTADO ELE NÃO RODA O SERVIDOR. ***

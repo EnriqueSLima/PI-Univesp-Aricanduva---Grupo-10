@@ -1,0 +1,14 @@
+*** TODO LIST ***
+
+1- Configurar 'models.py' com os tipos de dados adequedos do banco de dados
+2- Configurar as informações em 'settings.py' sobre o banco de dados
+
+3 - Configurar um app para autenticar os usuários
+4 - Configurar um app para interagir com o BD
+
+5- Criar formulários com os dados do BD
+6- Criar templates e views baseadas nos formulários
+
+7- Testes de conexão com o BD
+
+* Verificar se os CRUDS estão funcionando.
